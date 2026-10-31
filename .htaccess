@@ -2,11 +2,12 @@
 # e.g. https://getfitted.nl/download/windows
 RewriteEngine On
 RewriteBase /
+
+# Always use https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteRule ^download/windows/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted.exe [R=302,L]
 RewriteRule ^download/mac-apple-silicon/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-mac-apple-silicon.dmg [R=302,L]
 RewriteRule ^download/mac-intel/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-mac-intel.dmg [R=302,L]
 RewriteRule ^download/android/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-android.apk [R=302,L]
-
-# Once getfitted.nl has its SSL certificate, remove the # from the next two lines to always use https
-#RewriteCond %{HTTPS} off
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
