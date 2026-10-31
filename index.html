@@ -3,84 +3,348 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fitted CV</title>
-<meta name="description" content="Fitted CV: an app for Windows, Mac and Android that tailors your CV to every job ad, one true line at a time. Launching soon.">
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Fitted CV: every CV, fitted to the job">
+<meta property="og:description" content="Coming soon for Windows, Mac and Android. Register your interest.">
+<meta property="og:image" content="https://getfitted.nl/img/desktop-tailor.webp">
+<title>Fitted CV</title>
+<meta name="description" content="Fitted CV tailors your CV to every job ad, one true line at a time, for Windows, Mac and Android. Coming soon: register your interest.">
 <style>
 @font-face{font-family:"Barlow SC";src:url("fonts/barlow-semi-condensed-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"Barlow SC";src:url("fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
-/* One screen: brand top, statement left-aligned in the middle, contact under a stitched rule. Same tokens as the full site. */
+/* Layout: a stitched "label" hero (sign-up first), then proof, the three real steps with app shots, the five CV styles on paper, editions, and a second sign-up. */
 :root{
-  --fog:#e9eef0; --paper:#ffffff; --line:#d3dde1;
-  --ink:#142029; --ink-2:#44555f; --ink-3:#6f808a;
-  --petrol:#1e5a7d; --deep:#123a52; --amber:#e8a33d;
-  --display:"Barlow SC","Bahnschrift","Arial Narrow",sans-serif;
+  --fog:#e9eef0; --paper:#ffffff; --sunk:#f4f7f8; --line:#d3dde1;
+  --ink:#142029; --ink-2:#44555f; --ink-3:#66767f;
+  --petrol:#1e5a7d; --deep:#123a52; --stitch:#5f9cbd; --amber:#e8a33d; --amber-ink:#8a5a12; --amber-soft:#fbefd9;
+  --ok:#2f7d5b; --ok-soft:#dcefe5; --err:#b4483c;
+  --display:"Barlow SC","Bahnschrift","DIN Alternate","Arial Narrow",sans-serif;
   --text:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --shadow:0 18px 40px -18px rgba(18,58,82,.35);
 }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --fog:#0e171d; --paper:#15232c; --sunk:#1b2c36; --line:#2a3f4b;
+  --ink:#e4edf1; --ink-2:#b0c2cb; --ink-3:#8399a5;
+  --petrol:#5aa6cf; --deep:#0b2433; --stitch:#3f6f8c; --amber:#f0b457; --amber-ink:#f0b457; --amber-soft:#3a2f1b;
+  --ok:#4fb085; --ok-soft:#183429; --err:#e07a6e; --shadow:0 18px 40px -18px rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --fog:#0e171d; --paper:#15232c; --sunk:#1b2c36; --line:#2a3f4b;
+  --ink:#e4edf1; --ink-2:#b0c2cb; --ink-3:#8399a5;
+  --petrol:#5aa6cf; --deep:#0b2433; --stitch:#3f6f8c; --amber:#f0b457; --amber-ink:#f0b457; --amber-soft:#3a2f1b;
+  --ok:#4fb085; --ok-soft:#183429; --err:#e07a6e; --shadow:0 18px 40px -18px rgba(0,0,0,.6); color-scheme:dark}
+
 *{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--fog);color:var(--ink);font:17px/1.6 var(--text);display:flex;flex-direction:column}
+body{margin:0;background:var(--fog);color:var(--ink);font:17px/1.6 var(--text)}
 a{color:var(--petrol)}
+img{max-width:100%;height:auto;display:block}
 :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
 html[lang="en"] [data-l="nl"],html[lang="nl"] [data-l="en"]{display:none!important}
-.wrap{width:100%;max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-header .wrap{display:flex;align-items:center;gap:16px;padding-block:calc(22px + env(safe-area-inset-top,0px)) 0}
-.brand{display:flex;align-items:center;gap:10px;font:700 22px var(--display);letter-spacing:.2px}
-.brand img{width:36px;height:36px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+.eyebrow{font:600 13px var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--petrol);margin:0}
+
+/* header */
+header .wrap{display:flex;align-items:center;gap:16px;padding-block:22px}
+.logo{height:34px;width:auto}
+.logo.white{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .logo.dark{display:none}:root:not([data-theme="light"]) .logo.white{display:block}}
+:root[data-theme="dark"] .logo.dark{display:none} :root[data-theme="dark"] .logo.white{display:block}
 .lang{margin-left:auto;border:1px solid var(--line);background:var(--paper);border-radius:20px;padding:4px;display:flex;gap:2px}
-.lang button{all:unset;cursor:pointer;font:600 13px var(--display);padding:3px 10px;border-radius:14px;color:var(--ink-3)}
-.lang button[aria-pressed="true"]{background:var(--petrol);color:#fff}
+.lang button{all:unset;cursor:pointer;font:600 13px var(--display);padding:3px 11px;border-radius:14px;color:var(--ink-3)}
+.lang button[aria-pressed="true"]{background:var(--petrol);color:var(--paper)}
 .lang button:focus-visible{outline:2px solid var(--amber)}
-main{flex:1;display:flex;align-items:center}
-main .wrap{padding-block:56px}
-.soon{font:600 16px var(--display);letter-spacing:.5px;color:var(--petrol);margin:0 0 10px;display:inline-flex;align-items:center;gap:10px}
-.soon::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px rgba(232,163,61,.22)}
-h1{font:700 clamp(48px,9vw,112px)/.93 var(--display);letter-spacing:-.5px;margin:0;max-width:11ch;text-wrap:balance}
-.lead{font-size:clamp(18px,2.2vw,22px);color:var(--ink-2);max-width:52ch;margin:24px 0 0}
-.stitch{height:0;border-top:4px dashed var(--amber);max-width:420px;margin:40px 0 22px}
-.contact{margin:0;color:var(--ink-2)}
-.contact b{color:var(--ink);user-select:all}
-footer .wrap{padding-block:0 calc(24px + env(safe-area-inset-bottom,0px));color:var(--ink-3);font-size:14px}
-@media (max-width:420px){.brand{font-size:19px}}
+
+/* hero: a sewn label */
+.hero{position:relative;background:var(--deep);color:#fff;border-radius:28px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:14px;border:2px dashed var(--stitch);border-radius:20px;pointer-events:none;z-index:-1}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;padding:56px 56px 0}
+.soon{display:inline-flex;align-items:center;gap:10px;font:600 15px var(--display);letter-spacing:.12em;text-transform:uppercase;color:#f6d8a6;margin:0 0 14px}
+.soon::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px rgba(232,163,61,.25);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(232,163,61,.05)}}
+.hero h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;font-weight:700;letter-spacing:-.3px;max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);color:#c9dde8;max-width:46ch;margin:20px 0 26px}
+.plat{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;padding:0;list-style:none}
+.plat li{font:600 14px var(--display);letter-spacing:.04em;border:1px solid rgba(201,221,232,.35);color:#dbe9f0;border-radius:999px;padding:3px 12px}
+.phone{align-self:end;justify-self:center;width:min(330px,100%);border-radius:34px 34px 0 0;border:10px solid #0a1d29;border-bottom:0;background:#0a1d29;box-shadow:0 -10px 60px -10px rgba(0,0,0,.5);overflow:hidden;aspect-ratio:390/600}
+.phone img{width:100%;height:100%!important;object-fit:cover;object-position:top}
+
+/* sign-up form */
+.signup{background:var(--paper);color:var(--ink);border-radius:16px;padding:18px;box-shadow:var(--shadow);max-width:520px;margin-bottom:56px}
+.signup h2{font-size:22px;font-weight:700;margin-bottom:4px}
+.signup p.sd{margin:0 0 12px;color:var(--ink-2);font-size:15px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row input[type=email]{flex:1 1 220px;min-width:0;font:16px var(--text);padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--sunk);color:var(--ink)}
+.row input[type=email]:focus{outline:none;border-color:var(--petrol);background:var(--paper)}
+.btn{font:700 17px var(--display);letter-spacing:.03em;border:0;border-radius:10px;padding:12px 20px;cursor:pointer;background:var(--amber);color:#1f1608}
+.btn:hover{filter:brightness(1.05)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.consent{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ink-2);margin-top:10px;line-height:1.45}
+.consent input{margin-top:3px;accent-color:var(--petrol);flex:none}
+.msg{margin:10px 0 0;font-size:14.5px;border-radius:8px;padding:8px 12px}
+.msg.ok{background:var(--ok-soft);color:var(--ok)} .msg.err{background:color-mix(in srgb,var(--err) 12%,transparent);color:var(--err)}
+.msg.note{background:var(--amber-soft);color:var(--amber-ink)}
+
+/* proof */
+.proof{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center;padding-block:64px 24px}
+.big{font:700 clamp(64px,10vw,120px)/.9 var(--display);color:var(--petrol);letter-spacing:-1px}
+.big small{font-size:.38em;letter-spacing:0;color:var(--ink-2);display:block;margin-top:6px;font-weight:600}
+.proof p{margin:0;font-size:clamp(18px,1.9vw,22px);max-width:40ch}
+.cite{font-size:13px!important;color:var(--ink-3);margin-top:10px!important}
+
+/* steps */
+section.block{padding-block:56px}
+.head{display:grid;gap:8px;margin-bottom:28px;max-width:60ch}
+.head h2{font-size:clamp(32px,4vw,48px);line-height:1;font-weight:700}
+.head p{margin:0;color:var(--ink-2)}
+.steps{display:grid;gap:28px}
+.step{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:36px;align-items:center}
+.step:nth-child(even) .shot{order:-1}
+.step .n{font:700 15px var(--display);color:var(--amber-ink);letter-spacing:.1em;text-transform:uppercase}
+.step h3{font-size:28px;line-height:1.05;margin:6px 0 10px;font-weight:700}
+.step p{margin:0;color:var(--ink-2);max-width:42ch}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--paper)}
+
+/* styles on paper */
+.styles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.style figure{margin:0}
+.style .paper img{width:100%;height:100%;object-fit:cover;object-position:top}
+.style .paper{background:#fff;border-radius:6px;box-shadow:0 1px 0 var(--line),0 14px 30px -16px rgba(18,58,82,.45);overflow:hidden;aspect-ratio:1/1.1;transition:transform .25s ease}
+.style:hover .paper{transform:translateY(-4px) rotate(-.6deg)}
+.style figcaption{display:flex;justify-content:space-between;gap:8px;margin-top:10px;font:600 17px var(--display)}
+.style figcaption span{font:400 13px var(--text);color:var(--ink-3);text-align:right}
+
+/* editions */
+.eds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:900px}
+.ed{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px}
+.ed.pro{border:2px solid var(--petrol)}
+.ed h3{font-size:26px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.price{font:700 34px var(--display);color:var(--ink)}
+.price small{font:400 13px var(--text);color:var(--ink-3)}
+.ed ul{margin:14px 0 0;padding-left:20px;color:var(--ink-2)} .ed li{margin:4px 0}
+.fine{color:var(--ink-3);font-size:14px;margin-top:14px}
+
+/* closing */
+.closing{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center;margin-block:24px 56px}
+.closing h2{font-size:clamp(30px,3.6vw,44px);line-height:1;font-weight:700}
+.closing .signup{box-shadow:none;border:1px solid var(--line);margin:0}
+.stitchrule{height:0;border-top:3px dashed var(--amber);width:120px;margin:16px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;padding-block:0 32px;color:var(--ink-3);font-size:14px}
+
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr;padding:40px 28px 0}
+  .phone{width:min(300px,86%)}
+  .step,.closing{grid-template-columns:1fr}
+  .step:nth-child(even) .shot{order:0}
+  .styles{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .hero{border-radius:20px} .hero::before{inset:9px;border-radius:14px}
+  .hero-in{padding:32px 20px 0}
+  .proof{grid-template-columns:1fr;gap:10px}
+  .styles{grid-template-columns:repeat(5,68%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+  .style{scroll-snap-align:start}
+  .eds{grid-template-columns:1fr}
+  .closing{padding:24px}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+
 <header><div class="wrap">
-  <div class="brand"><img src="logo.svg" alt="">Fitted CV</div>
-  <div class="lang" role="group" aria-label="Language / Taal"><button data-set="en" aria-pressed="true">EN</button><button data-set="nl" aria-pressed="false">NL</button></div>
+  <img class="logo dark" src="img/logo.svg" alt="Fitted CV" width="190" height="34">
+  <img class="logo white" src="img/logo-white.svg" alt="Fitted CV" width="190" height="34">
+  <div class="lang" role="group" aria-label="Language / Taal"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="nl" aria-pressed="false">NL</button></div>
 </div></header>
 
-<main><div class="wrap">
-  <p class="soon"><span data-l="en">Launching soon</span><span data-l="nl">Binnenkort beschikbaar</span></p>
-  <h1 data-l="en">Every CV, fitted to the job.</h1>
-  <h1 data-l="nl">Elk cv, afgestemd op de vacature.</h1>
-  <p class="lead" data-l="en">Fitted CV is an app for Windows, Mac and Android that tailors your CV to each job ad, one true line per job, in English, Dutch and eight more languages.</p>
-  <p class="lead" data-l="nl">Fitted CV is een app voor Windows, Mac en Android die je cv afstemt op elke vacature, met per baan één regel die klopt, in het Nederlands, Engels en acht andere talen.</p>
-  <div class="stitch" aria-hidden="true"></div>
-  <p class="contact" data-l="en">Questions, or want to hear when it launches? Email <a href="mailto:info@getfitted.nl"><b>info@getfitted.nl</b></a></p>
-  <p class="contact" data-l="nl">Vragen, of horen wanneer het zover is? Mail naar <a href="mailto:info@getfitted.nl"><b>info@getfitted.nl</b></a></p>
-</div></main>
+<main>
+<div class="wrap">
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-in">
+      <div>
+        <p class="soon"><span data-l="en">Coming soon</span><span data-l="nl">Binnenkort</span></p>
+        <h1 id="h1"><span data-l="en">Every CV, <em>fitted</em> to the job.</span><span data-l="nl">Elk cv, <em>passend</em> bij de vacature.</span></h1>
+        <p class="lead" data-l="en">Paste a job ad. Fitted CV rewrites the lines recruiters read first so they match it, using only what you really did, and makes a ready-to-send PDF in English, Dutch or eight more languages.</p>
+        <p class="lead" data-l="nl">Plak een vacature. Fitted CV herschrijft de regels die recruiters als eerste lezen zodat ze aansluiten, alleen met wat je echt gedaan hebt, en maakt een verzendklare pdf in het Nederlands, Engels of acht andere talen.</p>
+        <ul class="plat" aria-label="Platforms"><li>Windows</li><li>Mac</li><li>Android</li></ul>
+        <form class="signup" id="signup1" novalidate>
+          <h2><span data-l="en">Be the first to know</span><span data-l="nl">Hoor het als eerste</span></h2>
+          <p class="sd" data-l="en">One email when Fitted CV launches. Nothing else.</p>
+          <p class="sd" data-l="nl">Eén e-mail zodra Fitted CV beschikbaar is. Verder niets.</p>
+          <div class="row">
+            <label class="sr" for="email1" style="position:absolute;left:-9999px">Email</label>
+            <input id="email1" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+            <button class="btn" type="submit"><span data-l="en">Notify me</span><span data-l="nl">Houd me op de hoogte</span></button>
+          </div>
+          <label class="consent"><input id="consent1" type="checkbox" required><span><span data-l="en">I agree that FITTED emails me once when Fitted CV launches. You can unsubscribe in one click.</span><span data-l="nl">Ik vind het goed dat FITTED me één keer mailt zodra Fitted CV beschikbaar is. Afmelden kan met één klik.</span></span></label>
+          <p class="msg" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+      <div class="phone"><img src="img/phone-tailor.webp" alt="Fitted CV on a phone: a drafted line that matches the ad, in English and Dutch" width="390" height="600"></div>
+    </div>
+  </section>
 
-<footer><div class="wrap">© <span id="yr">2026</span> Fitted CV</div></footer>
+  <section class="proof" aria-label="Why tailor">
+    <div class="big">1.85×<small data-l="en">as many interviews</small><small data-l="nl">zoveel gesprekken</small></div>
+    <div>
+      <p data-l="en">In a study of almost 2 million applications, CVs tailored to the job ad were invited to interview 1.85 times as often as untailored ones.</p>
+      <p data-l="nl">In een onderzoek naar bijna 2 miljoen sollicitaties werden cv's die op de vacature waren afgestemd 1,85 keer zo vaak uitgenodigd voor een gesprek als niet-afgestemde cv's.</p>
+      <p class="cite" data-l="en">Source: Huntr, Job Search Trends Q2 2026. The study shows a link, not proof that tailoring is the cause. No tool can promise you interviews.</p>
+      <p class="cite" data-l="nl">Bron: Huntr, Job Search Trends Q2 2026. Het onderzoek toont een verband, geen bewijs dat afstemmen de oorzaak is. Geen enkele tool kan je gesprekken beloven.</p>
+    </div>
+  </section>
+</div>
+
+<section class="block" aria-labelledby="how"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow"><span data-l="en">How it works</span><span data-l="nl">Zo werkt het</span></p>
+    <h2 id="how"><span data-l="en">Three steps per job ad</span><span data-l="nl">Drie stappen per vacature</span></h2>
+  </div>
+  <div class="steps">
+    <article class="step">
+      <div><span class="n"><span data-l="en">Step 1</span><span data-l="nl">Stap 1</span></span>
+        <h3><span data-l="en">Paste the ad, draft the lines</span><span data-l="nl">Plak de vacature, laat de regels opstellen</span></h3>
+        <p data-l="en">Fitted reads the ad and drafts one line per job that matches a real requirement, from facts already on your CV, in each of your languages.</p>
+        <p data-l="nl">Fitted leest de vacature en stelt per baan één regel op die past bij een echte eis, met feiten die al op je cv staan, in elk van je talen.</p></div>
+      <div class="shot"><img src="img/desktop-tailor.webp" alt="Drafted lines for each job, with the requirement each one matches" width="1600" height="1025"></div>
+    </article>
+    <article class="step">
+      <div><span class="n"><span data-l="en">Step 2</span><span data-l="nl">Stap 2</span></span>
+        <h3><span data-l="en">Confirm every change</span><span data-l="nl">Bevestig elke wijziging</span></h3>
+        <p data-l="en">Nothing goes on your CV until you've ticked that it's true and you can back it up in an interview.</p>
+        <p data-l="nl">Er komt niets op je cv tot jij hebt aangevinkt dat het klopt en dat je het in een gesprek kunt onderbouwen.</p></div>
+      <div class="shot"><img src="img/desktop-confirm.webp" alt="Confirming a changed line before the CV is made" width="1600" height="1025"></div>
+    </article>
+    <article class="step">
+      <div><span class="n"><span data-l="en">Step 3</span><span data-l="nl">Stap 3</span></span>
+        <h3><span data-l="en">Pick a style, get your PDFs</span><span data-l="nl">Kies een stijl, ontvang je pdf's</span></h3>
+        <p data-l="en">Choose one of five CV styles. You get a PDF per language, and the job is added to your applications list.</p>
+        <p data-l="nl">Kies een van vijf cv-stijlen. Je krijgt per taal een pdf, en de vacature komt in je sollicitatieoverzicht.</p></div>
+      <div class="shot"><img src="img/desktop-styles.webp" alt="Choosing a CV style on the last step" width="1600" height="1025"></div>
+    </article>
+  </div>
+</div></section>
+
+<section class="block" aria-labelledby="sty"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow"><span data-l="en">Five CV styles</span><span data-l="nl">Vijf cv-stijlen</span></p>
+    <h2 id="sty"><span data-l="en">The same true facts, your choice of look</span><span data-l="nl">Dezelfde ware feiten, jij kiest de look</span></h2>
+  </div>
+  <div class="styles">
+    <div class="style"><figure><div class="paper"><img src="img/style-classic.webp" alt="Classic CV style" width="640" height="704"></div><figcaption>Classic<span data-l="en">Petrol, spaced headings</span><span data-l="nl">Petrol, ruime kopjes</span></figcaption></figure></div>
+    <div class="style"><figure><div class="paper"><img src="img/style-modern.webp" alt="Modern CV style" width="640" height="704"></div><figcaption>Modern<span data-l="en">Teal header band</span><span data-l="nl">Groenblauwe kopbalk</span></figcaption></figure></div>
+    <div class="style"><figure><div class="paper"><img src="img/style-elegant.webp" alt="Elegant CV style" width="640" height="704"></div><figcaption>Elegant<span data-l="en">Serif, burgundy</span><span data-l="nl">Schreef, bordeaux</span></figcaption></figure></div>
+    <div class="style"><figure><div class="paper"><img src="img/style-minimal.webp" alt="Minimal CV style" width="640" height="704"></div><figcaption>Minimal<span data-l="en">Black and grey</span><span data-l="nl">Zwart en grijs</span></figcaption></figure></div>
+    <div class="style"><figure><div class="paper"><img src="img/style-bold.webp" alt="Bold CV style" width="640" height="704"></div><figcaption>Bold<span data-l="en">Large name, amber</span><span data-l="nl">Grote naam, amber</span></figcaption></figure></div>
+  </div>
+</div></section>
+
+<section class="block" aria-labelledby="eds"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow"><span data-l="en">Pay once</span><span data-l="nl">Eén keer betalen</span></p>
+    <h2 id="eds"><span data-l="en">Two editions, no subscription</span><span data-l="nl">Twee versies, geen abonnement</span></h2>
+    <p data-l="en">Try it free for your first 3 jobs, with every Pro feature.</p>
+    <p data-l="nl">Probeer het gratis voor je eerste 3 vacatures, met alle Pro-functies.</p>
+  </div>
+  <div class="eds">
+    <div class="ed"><h3>Fitted <span class="price">€15 <small data-l="en">once</small><small data-l="nl">eenmalig</small></span></h3>
+      <ul><li data-l="en">1 tailored line per job</li><li data-l="nl">1 afgestemde regel per baan</li>
+      <li data-l="en">English plus up to 9 more languages</li><li data-l="nl">Engels plus tot 9 andere talen</li>
+      <li data-l="en">5 CV styles and an applications list</li><li data-l="nl">5 cv-stijlen en een sollicitatieoverzicht</li></ul></div>
+    <div class="ed pro"><h3>Fitted Pro <span class="price">€25 <small data-l="en">once</small><small data-l="nl">eenmalig</small></span></h3>
+      <ul><li data-l="en">Up to 3 tailored lines per job</li><li data-l="nl">Tot 3 afgestemde regels per baan</li>
+      <li data-l="en">Your profile rewritten for each ad</li><li data-l="nl">Je profiel herschreven per vacature</li>
+      <li data-l="en">Your skills in the order the ad needs</li><li data-l="nl">Je vaardigheden in de volgorde die de vacature vraagt</li></ul></div>
+  </div>
+  <p class="fine" data-l="en">Planned launch prices, VAT included. One licence works on 2 devices: Windows, Mac or Android, in any mix.</p>
+  <p class="fine" data-l="nl">Geplande prijzen bij de lancering, inclusief btw. Eén licentie werkt op 2 apparaten: Windows, Mac of Android, in elke combinatie.</p>
+</div></section>
+
+<div class="wrap">
+  <section class="closing" aria-labelledby="close">
+    <div>
+      <h2 id="close"><span data-l="en">Launching soon at getfitted.nl</span><span data-l="nl">Binnenkort op getfitted.nl</span></h2>
+      <div class="stitchrule" aria-hidden="true"></div>
+      <p data-l="en" style="margin:0;color:var(--ink-2)">Leave your email and we'll tell you the day it's ready.</p>
+      <p data-l="nl" style="margin:0;color:var(--ink-2)">Laat je e-mailadres achter, dan laten we je weten wanneer het klaar is.</p>
+    </div>
+    <form class="signup" id="signup2" novalidate>
+      <div class="row">
+        <label for="email2" style="position:absolute;left:-9999px">Email</label>
+        <input id="email2" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        <button class="btn" type="submit"><span data-l="en">Notify me</span><span data-l="nl">Houd me op de hoogte</span></button>
+      </div>
+      <label class="consent"><input id="consent2" type="checkbox" required><span><span data-l="en">I agree that FITTED emails me once when Fitted CV launches. You can unsubscribe in one click.</span><span data-l="nl">Ik vind het goed dat FITTED me één keer mailt zodra Fitted CV beschikbaar is. Afmelden kan met één klik.</span></span></label>
+      <p class="msg" role="status" aria-live="polite" hidden></p>
+    </form>
+  </section>
+</div>
+</main>
+
+<section class="wrap" aria-labelledby="priv" style="padding-block:0 28px">
+  <h2 id="priv" style="font-size:20px;margin-bottom:6px"><span data-l="en">Privacy</span><span data-l="nl">Privacy</span></h2>
+  <p data-l="en" style="margin:0;color:var(--ink-2);font-size:14.5px;max-width:75ch">If you sign up, FITTED stores your email address and language with MailerLite (an EU-based email service) for one purpose: to tell you when Fitted CV launches. We don't share it with anyone else. You can unsubscribe with the link in any email, or ask us to delete your address at info@getfitted.nl.</p>
+  <p data-l="nl" style="margin:0;color:var(--ink-2);font-size:14.5px;max-width:75ch">Als je je aanmeldt, bewaart FITTED je e-mailadres en taal bij MailerLite (een e-maildienst in de EU) voor één doel: je laten weten wanneer Fitted CV beschikbaar is. We delen het met niemand anders. Je kunt je afmelden via de link in elke e-mail, of ons vragen je adres te verwijderen via info@getfitted.nl.</p>
+</section>
+
+<footer><div class="wrap">
+  <span>Fitted CV · <span data-l="en">a FITTED product</span><span data-l="nl">een product van FITTED</span></span>
+  <span><span data-l="en">Questions:</span><span data-l="nl">Vragen:</span> info@getfitted.nl</span>
+</div></footer>
 
 <script>
+/* Where sign-ups go. Empty = preview: the form works but sends nothing, and says so.
+   Set to the mailing-list service's form address when it is chosen (see README). */
+const SIGNUP_ENDPOINT = 'https://assets.mailerlite.com/jsonp/2758525/forms/202869343351997462/subscribe';
+
 (function(){
-  var KEY='fitted-lang', saved=null;
-  try{ saved=localStorage.getItem(KEY); }catch(e){}
-  var lang=saved||((navigator.language||'en').toLowerCase().indexOf('nl')===0?'nl':'en');
-  function set(l){
-    document.documentElement.lang=l;
-    var bs=document.querySelectorAll('.lang button');
-    for(var i=0;i<bs.length;i++) bs[i].setAttribute('aria-pressed', bs[i].getAttribute('data-set')===l);
+  const root = document.documentElement;
+  const T = {
+    en: {bad: 'Enter a valid email address, like name@example.com.', consent: 'Tick the box so we may email you at launch.',
+         ok: 'Almost done: check your inbox and click the link to confirm your email.', fail: "That didn't go through. Check your connection and try again.",
+         preview: 'Preview only: sign-ups are switched on when getfitted.nl goes live. Nothing was sent.'},
+    nl: {bad: 'Vul een geldig e-mailadres in, zoals naam@voorbeeld.nl.', consent: 'Vink het vakje aan, zodat we je bij de lancering mogen mailen.',
+         ok: 'Bijna klaar: kijk in je inbox en klik op de link om je e-mailadres te bevestigen.', fail: 'Dat lukte niet. Controleer je verbinding en probeer het opnieuw.',
+         preview: 'Alleen een voorbeeld: aanmelden werkt zodra getfitted.nl live is. Er is niets verstuurd.'}
+  };
+  function setLang(l){
+    root.lang = l;
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.set === l)));
+    document.querySelectorAll('input[type=email]').forEach(i => i.placeholder = l === 'nl' ? 'jij@voorbeeld.nl' : 'you@example.com');
+    try { localStorage.setItem('fitted-lang', l); } catch(e){}
   }
-  set(lang);
-  document.querySelector('.lang').addEventListener('click',function(e){
-    var b=e.target.closest('button'); if(!b) return;
-    set(b.getAttribute('data-set')); try{ localStorage.setItem(KEY,b.getAttribute('data-set')); }catch(err){}
-  });
-  document.getElementById('yr').textContent=new Date().getFullYear();
+  let start = 'en';
+  try { start = localStorage.getItem('fitted-lang') || ((navigator.language || '').toLowerCase().startsWith('nl') ? 'nl' : 'en'); } catch(e){}
+  setLang(start);
+  document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.set)));
+
+  document.querySelectorAll('form.signup').forEach(f => f.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    const t = T[root.lang] || T.en, email = f.querySelector('input[type=email]'), box = f.querySelector('input[type=checkbox]');
+    const msg = f.querySelector('.msg'), btn = f.querySelector('button');
+    const say = (cls, text) => { msg.className = 'msg ' + cls; msg.textContent = text; msg.hidden = false; };
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())){ say('err', t.bad); email.focus(); return; }
+    if (!box.checked){ say('err', t.consent); box.focus(); return; }
+    if (!SIGNUP_ENDPOINT){ say('note', t.preview); return; }
+    btn.disabled = true;
+    try {
+      // MailerLite embedded-form address: https://assets.mailerlite.com/jsonp/<account>/forms/<form>/subscribe
+      const fd = new FormData();
+      fd.append('fields[email]', email.value.trim());
+      fd.append('fields[language]', root.lang);      // optional custom field "language" in MailerLite
+      fd.append('ml-submit', '1');
+      fd.append('anticsrf', 'true');
+      const r = await fetch(SIGNUP_ENDPOINT, {method: 'POST', body: fd, headers: {'Accept': 'application/json'}});
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.success === false) throw new Error(r.status);
+      say('ok', t.ok); email.value = ''; box.checked = false;
+    } catch(e){ say('err', t.fail); }
+    finally { btn.disabled = false; }
+  }));
 })();
 </script>
+
 </body>
 </html>
