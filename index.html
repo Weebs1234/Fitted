@@ -336,9 +336,16 @@ const SIGNUP_ENDPOINT = 'https://assets.mailerlite.com/jsonp/2758525/forms/20286
       fd.append('fields[language]', root.lang);      // optional custom field "language" in MailerLite
       fd.append('ml-submit', '1');
       fd.append('anticsrf', 'true');
-      const r = await fetch(SIGNUP_ENDPOINT, {method: 'POST', body: fd, headers: {'Accept': 'application/json'}});
-      const j = await r.json().catch(() => ({}));
-      if (!r.ok || j.success === false) throw new Error(r.status);
+      let r;
+      try { r = await fetch(SIGNUP_ENDPOINT, {method: 'POST', body: fd, headers: {'Accept': 'application/json'}}); }
+      catch(e){ r = null; }
+      if (r){
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || j.success === false) throw new Error(r.status);
+      } else {
+        // the browser blocked reading the answer (cross-site): send it anyway; MailerLite's confirmation email follows
+        await fetch(SIGNUP_ENDPOINT, {method: 'POST', body: fd, mode: 'no-cors'});
+      }
       say('ok', t.ok); email.value = ''; box.checked = false;
     } catch(e){ say('err', t.fail); }
     finally { btn.disabled = false; }
