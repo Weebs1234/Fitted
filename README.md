@@ -1,2 +1,3 @@
-# Fitted
-Fitted - tailor your CV
+# Fitted CV
+
+Website for [fittedcv.nl](https://fittedcv.nl). Currently a coming-soon page.
