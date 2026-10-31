@@ -1,6 +1,7 @@
 # getfitted.nl on Strato (Apache). Short download links that always point to the newest release on GitHub,
 # e.g. https://getfitted.nl/download/windows
 RewriteEngine On
+RewriteBase /
 RewriteRule ^download/windows/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted.exe [R=302,L]
 RewriteRule ^download/mac-apple-silicon/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-mac-apple-silicon.dmg [R=302,L]
 RewriteRule ^download/mac-intel/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-mac-intel.dmg [R=302,L]
