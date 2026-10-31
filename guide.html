@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-en="User guide: Fitted CV" data-nl="Handleiding: Fitted CV">User guide: Fitted CV</title>
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+@font-face{font-family:"Barlow SC";src:url("fonts/barlow-semi-condensed-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow SC";src:url("fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{--fog:#e9eef0;--paper:#fff;--line:#d3dde1;--ink:#142029;--ink-2:#44555f;--ink-3:#66767f;--petrol:#1e5a7d;--deep:#123a52;--amber:#e8a33d;--amber-soft:#fbefd9;--amber-ink:#8a5a12;
+--display:"Barlow SC","Bahnschrift","Arial Narrow",sans-serif;--text:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root{--fog:#0e171d;--paper:#15232c;--line:#2a3f4b;--ink:#e4edf1;--ink-2:#b0c2cb;--ink-3:#8399a5;--petrol:#5aa6cf;--amber-soft:#3a2f1b;--amber-ink:#f0b457;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fog);color:var(--ink);font:17px/1.65 var(--text)}
+a{color:var(--petrol)} :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+html[lang="en"] [data-l="nl"],html[lang="nl"] [data-l="en"]{display:none!important}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+header .wrap{display:flex;align-items:center;gap:16px;padding-block:22px;max-width:1160px}
+.logo{height:32px;width:auto;display:block} .logo.white{display:none}
+@media (prefers-color-scheme: dark){.logo.dark{display:none}.logo.white{display:block}}
+.lang{margin-left:auto;border:1px solid var(--line);background:var(--paper);border-radius:20px;padding:4px;display:flex;gap:2px}
+.lang button{all:unset;cursor:pointer;font:600 13px var(--display);padding:3px 11px;border-radius:14px;color:var(--ink-3)}
+.lang button[aria-pressed="true"]{background:var(--petrol);color:var(--paper)}
+main .wrap{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding-block:36px 40px;margin-block:8px 40px}
+main .wrap{padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
+h1{font:700 clamp(34px,5vw,48px)/1 var(--display);margin:0 0 6px;text-wrap:balance}
+h2{font:700 24px/1.1 var(--display);margin:30px 0 8px}
+.upd{color:var(--ink-3);font-size:14px;margin:0 0 18px}
+.lead{font-size:19px;color:var(--ink-2)}
+li{margin:6px 0} table{border-collapse:collapse;width:100%;font-size:15px;margin:8px 0}
+th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:8px 10px 8px 0}
+th{font:600 15px var(--display);letter-spacing:.03em}
+.tbl{overflow-x:auto}
+.todo{background:var(--amber-soft);color:var(--amber-ink);border-radius:4px;padding:0 5px;font-size:.92em}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;padding-block:0 32px;color:var(--ink-3);font-size:14px;max-width:1160px}
+footer a{color:var(--ink-3)}
+
+.wrap{max-width:900px} figure{margin:18px 0 22px} figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+figcaption{font-size:14px;color:var(--ink-3);margin-top:6px} blockquote{margin:18px 0;padding:14px 18px;background:var(--amber-soft);border-radius:12px;color:var(--ink)}
+blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .toc{border:1px solid var(--line);border-radius:14px;padding:14px 20px;margin:22px 0}
+.toc ol{columns:2;column-gap:28px;margin:6px 0 0;padding-left:20px;font-size:15px} @media (max-width:600px){.toc ol{columns:1}} em{color:var(--ink-3);font-size:14px}
+.dl{display:inline-block;margin:4px 0 8px;font:600 15px var(--display);background:var(--petrol);color:#fff;text-decoration:none;padding:8px 16px;border-radius:20px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="index.html" aria-label="Fitted CV home"><img class="logo dark" src="img/logo.svg" alt="Fitted CV" width="180" height="32"><img class="logo white" src="img/logo-white.svg" alt="Fitted CV" width="180" height="32"></a>
+  <div class="lang" role="group" aria-label="Language / Taal"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="nl" aria-pressed="false">NL</button></div>
+</div></header>
+<main><div class="wrap">
+<div data-l="en">
+<h1>Fitted CV user guide</h1>
+<p><a class="dl" href="Fitted-CV-user-guide-EN.pdf">Download as PDF</a></p>
+<p><strong>Fitted CV</strong> gives you a CV fitted to every job ad in a few minutes. It rewrites the lines recruiters read first so they match the ad, using only things you really did, and makes a ready-to-send PDF in each of your languages. Fitted CV is the first product from <strong>FITTED</strong>.</p>
+<blockquote>
+<p><strong>Why fit your CV to each ad?</strong> Recruiters first scan job titles, employers and keywords, in seconds. In a study of almost 2 million applications, tailored CVs got <strong>1.85× as many interviews</strong> (Huntr, 2026). Fitted CV makes that tailoring quick, and keeps it honest.</p>
+</blockquote>
+<h3>Your first fitted CV in five steps</h3>
+<ol>
+<li><strong>Bring your CV in.</strong> Import your PDF or Word CV, or your LinkedIn or Indeed profile saved as PDF (section 2).</li>
+<li><strong>Connect an AI.</strong> A free one is fine (section 3).</li>
+<li><strong>Paste the job link.</strong> Fitted fetches the ad, company and role (section 4).</li>
+<li><strong>Draft with AI, then check every line.</strong> Nothing goes on your CV until you confirm it's true (section 5).</li>
+<li><strong>Pick a style and build.</strong> You get one PDF per language, plus a row in your applications list (sections 5 and 6).</li>
+</ol>
+<p>The rest of this guide walks through every page of the app in the order you meet them.</p>
+<nav class="toc"><strong>Contents</strong><ol><li><a href="#en-1-getting-started">Getting started</a></li><li><a href="#en-2-set-up-your-cv">Set up your CV</a></li><li><a href="#en-3-settings-ai-languages-licence">Settings: AI, languages, licence</a></li><li><a href="#en-4-new-application">New application</a></li><li><a href="#en-5-confirm-each-changed-line">Confirm each changed line</a></li><li><a href="#en-6-your-cvs-are-ready">Your CVs are ready</a></li><li><a href="#en-7-applications">Applications</a></li><li><a href="#en-8-my-cv">My CV</a></li><li><a href="#en-9-help-updates-and-your-licence">Help, updates and your licence</a></li><li><a href="#en-10-troubleshooting">Troubleshooting</a></li></ol></nav><h2 id="en-1-getting-started">1. Getting started</h2>
+<p>Download Fitted from getfitted.nl. It is free for your first 3 jobs.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Device</th>
+<th>What to download</th>
+<th>First start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 10 or 11</td>
+<td>Fitted.exe</td>
+<td>Windows may show "Windows protected your PC". Click <strong>More info</strong>, then <strong>Run anyway</strong>.</td>
+</tr>
+<tr>
+<td>Mac with Apple silicon (M1 or newer)</td>
+<td>Fitted-mac-apple-silicon.dmg</td>
+<td>Open the file and drag Fitted into <strong>Applications</strong>. If macOS says it can't check Fitted: <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>.</td>
+</tr>
+<tr>
+<td>Mac with Intel</td>
+<td>Fitted-mac-intel.dmg</td>
+<td>Same as above.</td>
+</tr>
+<tr>
+<td>Android 7 or newer</td>
+<td>Fitted-android.apk</td>
+<td>Tap the downloaded file. Android asks once to allow installs from your browser: switch on <strong>Allow from this source</strong> and go back.</td>
+</tr>
+</tbody>
+</table></div>
+<p>These warnings appear only the first time. Updates install from inside Fitted without them.</p>
+<p>You need an AI account for drafting lines, translating and importing your CV. Several AIs have a free option; Fitted helps you set one up on the next page.</p>
+<p><strong>Where your files live</strong></p>
+<ul>
+<li>Windows and Mac: a folder called <strong>Fitted</strong> on your Desktop, with your CV, settings, the applications list (applications.xlsx) and a folder per job with its PDFs.</li>
+<li>Android: inside the Fitted app. Use <strong>Share</strong> to send a PDF anywhere.</li>
+</ul>
+<h2 id="en-2-set-up-your-cv">2. Set up your CV</h2>
+<p>You do this once. Fitted turns your existing CV into its own editable version, without adding anything that isn't in it.</p>
+<figure><img src="img/guide/01-setup.jpg" alt="Set up your CV, with LinkedIn chosen as the source" loading="lazy"><figcaption>Set up your CV, with LinkedIn chosen as the source</figcaption></figure>
+
+<p><strong>Where is your CV now?</strong> Pick one of three sources:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDF or Word file</td>
+<td>Click <strong>Choose CV file</strong> and pick your CV (.pdf or .docx).</td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td>Click <strong>Open my LinkedIn profile</strong>, then <strong>More → Save to PDF</strong> under your name. Come back and click <strong>Choose the LinkedIn PDF</strong> (usually Profile.pdf in Downloads). On a phone, use the desktop version of the LinkedIn site.</td>
+</tr>
+<tr>
+<td>Indeed</td>
+<td>Click <strong>Open my Indeed profile</strong>, open the <strong>⋮</strong> menu at your resume and choose <strong>Download</strong>. Come back and click <strong>Choose the Indeed PDF</strong>.</td>
+</tr>
+</tbody>
+</table></div>
+<p>LinkedIn and Indeed don't let other apps read your profile directly, so the PDF download is the way in.</p>
+<p><strong>AI that reads your CV.</strong> If no AI is set up yet, the box above the button asks for one. Pick a provider, click <strong>Get a key</strong>, paste the key and click <strong>Connect</strong>. See section 3 for which AI to choose.</p>
+<p>The import takes about a minute. Then Fitted opens <strong>My CV</strong> so you can check every section and click <strong>Save changes</strong>.</p>
+<p><strong>Other ways to start</strong></p>
+<ul>
+<li><strong>Start from scratch</strong>: type your CV into the editor yourself.</li>
+<li><strong>Open a Fitted data file</strong>: load a cv-data.json from an earlier setup or a backup.</li>
+</ul>
+<h2 id="en-3-settings-ai-languages-licence">3. Settings: AI, languages, licence</h2>
+<p>Open <strong>Settings</strong> at the bottom of the sidebar (on a phone: the Settings tab). Your AI key stays on your own device.</p>
+<figure><img src="img/guide/08-settings.jpg" alt="Settings with an AI connected" loading="lazy"><figcaption>Settings with an AI connected</figcaption></figure>
+
+<p><strong>Choosing an AI.</strong> Fitted uses your own AI account, so you pay the AI provider directly, or nothing on a free plan.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>AI</th>
+<th>Cost</th>
+<th>Good to know</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude (Anthropic)</td>
+<td>Paid per use</td>
+<td>Most reliable for translations and CV import.</td>
+</tr>
+<tr>
+<td>Google Gemini</td>
+<td>Free plan available</td>
+<td>On the free plan Google may use what you send to improve its products; Fitted shows a warning.</td>
+</tr>
+<tr>
+<td>Groq</td>
+<td>Free allowance</td>
+<td>Fast; good for drafting lines.</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td>Free models available</td>
+<td>One key for many AI models.</td>
+</tr>
+<tr>
+<td>Local AI (Ollama)</td>
+<td>Free</td>
+<td>Runs on your own computer, nothing leaves it. Install Ollama and download a model first.</td>
+</tr>
+<tr>
+<td>Other compatible service</td>
+<td>Depends</td>
+<td>For services that work like OpenAI's.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pick one, click <strong>Get a key</strong>, paste it and click <strong>Connect</strong>. Fitted tests the key and picks a suitable model; you can change the model afterwards.</p>
+<p><strong>A different AI for translations and CV import.</strong> Tick this to use a stronger AI for the heavy jobs (translating your whole CV, importing it) and a cheaper or free one for drafting lines.</p>
+<p><strong>CV languages.</strong> English is always the base. Click <strong>Change</strong> to add up to 9 more: Dutch, German, French, Spanish, Italian, Portuguese, Swedish, Danish and Norwegian. Your AI translates your CV once; you can check and edit each translation under My CV.</p>
+<p><strong>Licence.</strong> Shows your free jobs left. After buying, paste your licence key here and click <strong>Activate</strong>. One licence works on 2 devices; use <strong>Deactivate on this computer</strong> to move it.</p>
+<p><strong>Version.</strong> Shows your version and lets you check for updates.</p>
+<h2 id="en-4-new-application">4. New application</h2>
+<p>This is where you tailor your CV to one job ad, in three steps on one page.</p>
+<figure><img src="img/guide/02-new.jpg" alt="New application, before a job ad is loaded" loading="lazy"><figcaption>New application, before a job ad is loaded</figcaption></figure>
+
+<p><strong>Step 1: Job listing</strong></p>
+<ol>
+<li>Paste the link to the job ad and click <strong>Fetch listing</strong>. Fitted fills in the company, the role and the apply link. Check them.</li>
+<li>A site won't load? Open <strong>Listing text</strong>, and paste the ad text you copied from your browser.</li>
+<li>The badge at the top right says which CV to send, based on the ad's language (for example "Send the Dutch version").</li>
+</ol>
+<p>On Android you can also start from the ad itself: tap <strong>Share</strong> on a job ad in your browser, LinkedIn or a job app, and choose <strong>Fitted</strong>.</p>
+<p><strong>Step 2: Tailor your experience</strong></p>
+<figure><img src="img/guide/03-tailor.jpg" alt="Tailoring: drafted lines for each job" loading="lazy"><figcaption>Tailoring: drafted lines for each job</figcaption></figure>
+
+<ol>
+<li>Click <strong>Draft with AI</strong>. For each job, the AI writes one line that matches what the ad asks for, using only facts from that job and your extra facts.</li>
+<li>The yellow note shows which requirement in the ad the line answers.</li>
+<li>Click each job on the left to review its line, in every language. Change the wording freely; the line should stay true and under 200 characters.</li>
+<li>The list under the text box shows where the line goes: as the second point of that job.</li>
+<li><strong>Reset to default</strong> puts back that job's standard line.</li>
+</ol>
+<p>Dots on the left: grey = default line, amber = drafted by the AI and not yet reviewed, green = checked by you.</p>
+<p><strong>Fitted Pro extras</strong> (also included in the free trial)</p>
+<ul>
+<li><strong>Reworded points</strong>: up to 2 more points per job, reworded for the ad with the same facts. They appear under the job's line; <strong>Keep the original</strong> undoes one.</li>
+<li><strong>Profile and skills for this ad</strong>: under the jobs, your profile rewritten for the role and your skills with the most relevant first. <strong>Keep my own profile</strong> and <strong>Keep my order</strong> undo them.</li>
+</ul>
+<p>With Fitted (not Pro) these places show a <strong>Get Pro</strong> button.</p>
+<p><strong>Step 3: Build</strong></p>
+<p>Click <strong>Build CVs</strong>. You first confirm each changed line (next section), then Fitted makes a PDF in each of your languages and adds the job to Applications.</p>
+<p><strong>Start over</strong> (top right) clears the page for the next job.</p>
+<h2 id="en-5-confirm-each-changed-line">5. Confirm each changed line</h2>
+<p>Nothing is built until you have confirmed every changed line. Recruiters ask about what's on your CV, so each line has to be something you can talk about.</p>
+<figure><img src="img/guide/04-confirm.jpg" alt="Confirming a changed line" loading="lazy"><figcaption>Confirming a changed line</figcaption></figure>
+
+<p>For each job with a new line you see:</p>
+<ul>
+<li>the requirement in the ad it answers (yellow);</li>
+<li>the new line in each language;</li>
+<li>the default line it replaces.</li>
+</ul>
+<p>With Pro, reworded points are listed in the same step as the job's line, and a separate step shows your new profile. You confirm those the same way.</p>
+<p>Tick <strong>This is true for this role, and I can back it up in an interview</strong>, then click <strong>Confirm and continue</strong>.</p>
+<ul>
+<li><strong>Edit this line</strong> takes you back to change the wording.</li>
+<li><strong>Back</strong> returns to the previous job.</li>
+<li><strong>Cancel</strong> stops without building anything.</li>
+</ul>
+<p>The last step, <strong>Check the job details</strong>, shows the company, role, apply link, languages and which version to send. Tick that they are correct and click <strong>Build</strong>.</p>
+<p><strong>CV style.</strong> On that last step, choose how your CVs look:</p>
+<ul>
+<li><strong>Classic:</strong> petrol blue, spaced headings.</li>
+<li><strong>Modern:</strong> a teal header band.</li>
+<li><strong>Elegant:</strong> serif type, burgundy.</li>
+<li><strong>Minimal:</strong> black and grey.</li>
+<li><strong>Bold:</strong> large name, amber accents.</li>
+</ul>
+<p>Click <strong>Preview with my CV</strong> to open your own CV in the chosen style. Fitted remembers your choice for the next job, and <strong>Preview</strong> in My CV uses it too.</p>
+<figure><img src="img/guide/05b-styles.jpg" alt="The last step: choosing a CV style" loading="lazy"><figcaption>The last step: choosing a CV style</figcaption></figure>
+
+<h2 id="en-6-your-cvs-are-ready">6. Your CVs are ready</h2>
+<p>After building, a green box shows your PDFs, one per language, and which one to send.</p>
+<figure><img src="img/guide/05-result.jpg" alt="The CVs are ready" loading="lazy"><figcaption>The CVs are ready</figcaption></figure>
+
+<ul>
+<li><strong>Send ...</strong> (green label): the version that matches the ad's language. Send that one.</li>
+<li><strong>Open English / Open Nederlands</strong>: opens the PDF.</li>
+<li><strong>Open folder</strong> (Windows and Mac): the job's folder inside Fitted on your Desktop. On Android you get <strong>Share</strong> buttons instead, to send a PDF by email, WhatsApp or to a job site.</li>
+<li><strong>See applications</strong>: jumps to your applications list.</li>
+</ul>
+<p><strong>Changing a line after building.</strong> The PDFs you send are plain text. For a last tweak, click <strong>Editable copies</strong>: the same CVs, with the tailored lines still editable in a PDF reader such as Edge, Chrome or Acrobat. PDF readers highlight those editable lines, so send the normal PDF, or change the line in Fitted and build again (the same job is updated, not added twice).</p>
+<h2 id="en-7-applications">7. Applications</h2>
+<p>Every job you build CVs for lands here, newest first, with its status and files. The list is also saved as applications.xlsx in your Fitted folder.</p>
+<figure><img src="img/guide/06-applications.jpg" alt="The applications list" loading="lazy"><figcaption>The applications list</figcaption></figure>
+
+<ul>
+<li><strong>Totals</strong> at the top: all jobs, to apply, applied, interviews, offers.</li>
+<li><strong>Status</strong>: pick To apply, Applied, Interview, Offer, Rejected or Withdrawn. It saves straight away.</li>
+<li><strong>Send</strong>: which language version to send.</li>
+<li><strong>Apply</strong> opens the apply link, <strong>Ad</strong> the job ad.</li>
+<li><strong>EN / NL</strong> (one button per language) opens that PDF.</li>
+<li><strong>Folder</strong> (Windows and Mac) opens the job's folder; on Android, <strong>Share</strong> sends the PDF to send.</li>
+<li><strong>Open in Excel</strong> (Mac: <strong>Open spreadsheet</strong>; Android: <strong>Share spreadsheet</strong>) opens or shares the whole list.</li>
+</ul>
+<p>On a phone each job shows as a card.</p>
+<h2 id="en-8-my-cv">8. My CV</h2>
+<p>My CV is the base of every CV you build. Tailored lines draw only on what's here, so keep it complete and true.</p>
+<figure><img src="img/guide/07-mycv.jpg" alt="The CV editor" loading="lazy"><figcaption>The CV editor</figcaption></figure>
+
+<p><strong>Language tabs.</strong> English (base) and each extra language have their own tab. When you change the English version, the other languages get an amber dot and an <strong>Update translation</strong> button. Translations can also be edited by hand.</p>
+<p><strong>Sections</strong></p>
+<ul>
+<li><strong>About you</strong>: name, headline, contact details (one per line), profile.</li>
+<li><strong>Work experience</strong>: one card per job, newest first. Fill in job title, company, dates and what you did (one point per line).</li>
+<li><strong>Tailor this job</strong>: untick it for jobs that should stay as they are, such as a student job. Those never get a tailored line.</li>
+<li><strong>Default tailored line</strong>: the second point of that job when you don't tailor for an ad. A true fact, under 200 characters.</li>
+<li>The arrows move a job up or down; <strong>Remove</strong> deletes it.</li>
+<li><strong>Key achievements, Skills, Languages, Certifications, Education, References.</strong></li>
+<li><strong>Extra true facts</strong>: things that are true but not written on your CV. The AI may use them when tailoring lines, and nothing else. One per line, and be specific about what you did and didn't do.</li>
+<li><strong>Headings</strong>: rename section headings per language if you like.</li>
+</ul>
+<p><strong>Buttons</strong></p>
+<ul>
+<li><strong>Preview PDF</strong>: shows the CV as it will look.</li>
+<li><strong>Save changes</strong>: lights up once you change something. Leaving My CV with unsaved changes asks whether to save.</li>
+<li><strong>Replace with a new CV file</strong>: imports a new CV (section 2). Your current CV is kept as a backup in the Fitted folder.</li>
+</ul>
+<h2 id="en-9-help-updates-and-your-licence">9. Help, updates and your licence</h2>
+<figure><img src="img/guide/09-help.jpg" alt="Help and feedback" loading="lazy"><figcaption>Help and feedback</figcaption></figure>
+
+<p><strong>Help and feedback.</strong> Short answers to common questions, and a form that goes straight to help@getfitted.nl. Choose Problem, Idea or Question, write a few words and click <strong>Open in email</strong> (or <strong>Copy instead</strong>). Leave <strong>Add app version and system version</strong> ticked: it helps fix problems faster.</p>
+<p><strong>Updates.</strong> Fitted checks for a new version when it starts. A banner appears: click <strong>Update and restart</strong> (Android: <strong>Update</strong>). Your CV, settings and applications are never touched. On a Mac, keep Fitted in your Applications folder so it can update itself. On Android, allow Fitted to install updates the first time it asks.</p>
+<p><strong>Free trial and licence</strong></p>
+<ul>
+<li>Fitted is free for your first 3 jobs. Building again for a job you already did doesn't count.</li>
+<li>After that, buy Fitted (€15: one tailored line per job) or Fitted Pro (€25: up to 3 lines per job, plus profile and skills for each ad), once, from the sidebar or Settings. Activate it with the key from your purchase email. Already have Fitted? Settings → Upgrade to Pro (€10).</li>
+<li>One licence works on 2 devices, in any mix of computers and phones.</li>
+<li>Everything you made during the trial stays yours.</li>
+<li>Not happy? Within 14 days you get your money back: email help@getfitted.nl with your order number.</li>
+</ul>
+<h2 id="en-10-troubleshooting">10. Troubleshooting</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A job site won't load the listing</td>
+<td>Some sites need a login or block apps. Copy the ad text in your browser and paste it under <strong>Listing text</strong>.</td>
+</tr>
+<tr>
+<td>"Set up an AI first"</td>
+<td>Open <strong>Settings → AI</strong>, paste a key and click <strong>Connect</strong>.</td>
+</tr>
+<tr>
+<td>The AI gives an error or limit message</td>
+<td>Free plans have limits per minute or day. Wait a moment, or pick another AI in Settings.</td>
+</tr>
+<tr>
+<td>CV import says hardly any text could be read</td>
+<td>The file is probably a scanned image. Use a PDF with real text, a Word file, or start from scratch.</td>
+</tr>
+<tr>
+<td>"A file is open in another program"</td>
+<td>Close applications.xlsx in Excel, or the PDF, and try again.</td>
+</tr>
+<tr>
+<td>Windows says "Windows protected your PC"</td>
+<td>Click <strong>More info</strong>, then <strong>Run anyway</strong>. Only the first time.</td>
+</tr>
+<tr>
+<td>Mac says Fitted can't be opened</td>
+<td><strong>System Settings → Privacy &amp; Security → Open Anyway</strong>. Only the first time.</td>
+</tr>
+<tr>
+<td>Android won't install the file</td>
+<td>Allow installs from your browser (or, for updates, from Fitted) when Android asks.</td>
+</tr>
+<tr>
+<td>Mac update says to move Fitted</td>
+<td>Drag Fitted into your Applications folder, open it from there and update again.</td>
+</tr>
+<tr>
+<td>Something else</td>
+<td><strong>Help and feedback → Send feedback</strong>, or email help@getfitted.nl.</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Source for the interview figure: Huntr, <a href="https://huntr.co/research/job-search-trends-q2-2026">Job Search Trends Q2 2026</a>. The figure shows that tailored CVs and more interviews go together; it doesn't prove that tailoring causes them, and nobody can promise you interviews.</em></p>
+</div>
+<div data-l="nl">
+<h1>Fitted CV gebruikershandleiding</h1>
+<p><a class="dl" href="Fitted-CV-handleiding-NL.pdf">Download als pdf</a></p>
+<p><strong>Fitted CV</strong> maakt in een paar minuten een cv dat past bij elke vacature. De regels die recruiters het eerst lezen, worden afgestemd op de vacature, alleen met wat je echt gedaan hebt. Je krijgt een verzendklare pdf in elk van je talen. Fitted CV is het eerste product van <strong>FITTED</strong>.</p>
+<blockquote>
+<p><strong>Waarom je cv per vacature aanpassen?</strong> Recruiters scannen eerst functietitels, werkgevers en trefwoorden, in een paar seconden. In een onderzoek naar bijna 2 miljoen sollicitaties kregen afgestemde cv's <strong>1,85 keer zoveel uitnodigingen voor een gesprek</strong> (Huntr, 2026). Fitted CV maakt dat afstemmen snel, en houdt het eerlijk.</p>
+</blockquote>
+<h3>Je eerste passende cv in vijf stappen</h3>
+<ol>
+<li><strong>Haal je cv binnen.</strong> Importeer je cv als pdf of Word, of je LinkedIn- of Indeed-profiel opgeslagen als pdf (hoofdstuk 2).</li>
+<li><strong>Koppel een AI.</strong> Een gratis AI is prima (hoofdstuk 3).</li>
+<li><strong>Plak de link naar de vacature.</strong> Fitted haalt de vacature, het bedrijf en de functie op (hoofdstuk 4).</li>
+<li><strong>Laat de AI een voorstel doen en controleer elke regel.</strong> Niets komt op je cv tot jij bevestigt dat het klopt (hoofdstuk 5).</li>
+<li><strong>Kies een stijl en maak je cv's.</strong> Je krijgt per taal een pdf, en een regel in je sollicitatieoverzicht (hoofdstuk 5 en 6).</li>
+</ol>
+<p>De rest van deze handleiding loopt alle pagina's van de app langs in de volgorde waarin je ze tegenkomt. De app zelf is in het Engels; de knoppen staan hier dus met hun Engelse naam.</p>
+<nav class="toc"><strong>Inhoud</strong><ol><li><a href="#nl-1-aan-de-slag">Aan de slag</a></li><li><a href="#nl-2-je-cv-instellen">Je cv instellen</a></li><li><a href="#nl-3-instellingen-ai-talen-licentie">Instellingen: AI, talen, licentie</a></li><li><a href="#nl-4-nieuwe-sollicitatie-new-application">Nieuwe sollicitatie (New application)</a></li><li><a href="#nl-5-elke-aangepaste-regel-bevestigen">Elke aangepaste regel bevestigen</a></li><li><a href="#nl-6-je-cv-s-zijn-klaar">Je cv's zijn klaar</a></li><li><a href="#nl-7-sollicitaties-applications">Sollicitaties (Applications)</a></li><li><a href="#nl-8-mijn-cv-my-cv">Mijn cv (My CV)</a></li><li><a href="#nl-9-hulp-updates-en-je-licentie">Hulp, updates en je licentie</a></li><li><a href="#nl-10-problemen-oplossen">Problemen oplossen</a></li></ol></nav><h2 id="nl-1-aan-de-slag">1. Aan de slag</h2>
+<p>Download Fitted via getfitted.nl. Je eerste 3 vacatures zijn gratis.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Apparaat</th>
+<th>Wat je downloadt</th>
+<th>Eerste keer openen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows 10 of 11</td>
+<td>Fitted.exe</td>
+<td>Windows kan "Windows heeft uw pc beschermd" tonen. Klik op <strong>Meer informatie</strong> en dan op <strong>Toch uitvoeren</strong>.</td>
+</tr>
+<tr>
+<td>Mac met Apple silicon (M1 of nieuwer)</td>
+<td>Fitted-mac-apple-silicon.dmg</td>
+<td>Open het bestand en sleep Fitted naar <strong>Apps</strong> (Programma's). Zegt macOS dat het Fitted niet kan controleren: <strong>Systeeminstellingen → Privacy en beveiliging → Toch openen</strong>.</td>
+</tr>
+<tr>
+<td>Mac met Intel</td>
+<td>Fitted-mac-intel.dmg</td>
+<td>Zoals hierboven.</td>
+</tr>
+<tr>
+<td>Android 7 of nieuwer</td>
+<td>Fitted-android.apk</td>
+<td>Tik op het gedownloade bestand. Android vraagt één keer of je installaties via je browser toestaat: zet <strong>Toestaan van deze bron</strong> aan en ga terug.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Deze meldingen zie je alleen de eerste keer. Updates installeer je vanuit Fitted, zonder meldingen.</p>
+<p>Voor regels schrijven, vertalen en je cv importeren heb je een AI-account nodig. Een aantal AI's heeft een gratis optie; Fitted helpt je er op de volgende pagina een in te stellen.</p>
+<p><strong>Waar je bestanden staan</strong></p>
+<ul>
+<li>Windows en Mac: een map <strong>Fitted</strong> op je bureaublad, met je cv, instellingen, het sollicitatieoverzicht (applications.xlsx) en per vacature een map met de pdf's.</li>
+<li>Android: in de app Fitted. Met <strong>Share</strong> stuur je een pdf waarheen je wilt.</li>
+</ul>
+<h2 id="nl-2-je-cv-instellen">2. Je cv instellen</h2>
+<p>Dit doe je één keer. Fitted zet je bestaande cv om naar een eigen, bewerkbare versie, zonder iets toe te voegen wat er niet in staat.</p>
+<figure><img src="img/guide/01-setup.jpg" alt="Je cv instellen, met LinkedIn als bron" loading="lazy"><figcaption>Je cv instellen, met LinkedIn als bron</figcaption></figure>
+
+<p><strong>Waar staat je cv nu?</strong> Kies een van de drie bronnen:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bron</th>
+<th>Wat je doet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDF or Word file (pdf- of Word-bestand)</td>
+<td>Klik op <strong>Choose CV file</strong> en kies je cv (.pdf of .docx).</td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td>Klik op <strong>Open my LinkedIn profile</strong>, dan onder je naam op <strong>Meer → Opslaan als pdf</strong>. Kom terug en klik op <strong>Choose the LinkedIn PDF</strong> (meestal Profile.pdf in Downloads). Op een telefoon: gebruik de desktopversie van de LinkedIn-site.</td>
+</tr>
+<tr>
+<td>Indeed</td>
+<td>Klik op <strong>Open my Indeed profile</strong>, open het menu <strong>⋮</strong> bij je cv en kies <strong>Downloaden</strong>. Kom terug en klik op <strong>Choose the Indeed PDF</strong>.</td>
+</tr>
+</tbody>
+</table></div>
+<p>LinkedIn en Indeed laten andere apps je profiel niet rechtstreeks lezen; daarom gaat het via de pdf.</p>
+<p><strong>AI that reads your CV.</strong> Is er nog geen AI ingesteld, dan vraagt het vak boven de knop erom. Kies een aanbieder, klik op <strong>Get a key</strong>, plak de sleutel en klik op <strong>Connect</strong>. In hoofdstuk 3 lees je welke AI je kiest.</p>
+<p>Het importeren duurt ongeveer een minuut. Daarna opent Fitted <strong>My CV</strong>, zodat je elk onderdeel kunt nalopen en op <strong>Save changes</strong> klikt.</p>
+<p><strong>Andere manieren om te beginnen</strong></p>
+<ul>
+<li><strong>Start from scratch</strong>: typ je cv zelf in de editor.</li>
+<li><strong>Open a Fitted data file</strong>: open een cv-data.json van een eerdere installatie of een back-up.</li>
+</ul>
+<h2 id="nl-3-instellingen-ai-talen-licentie">3. Instellingen: AI, talen, licentie</h2>
+<p>Open <strong>Settings</strong> onderaan de zijbalk (op een telefoon: het tabblad Settings). Je AI-sleutel blijft op je eigen apparaat.</p>
+<figure><img src="img/guide/08-settings.jpg" alt="Instellingen met een gekoppelde AI" loading="lazy"><figcaption>Instellingen met een gekoppelde AI</figcaption></figure>
+
+<p><strong>Een AI kiezen.</strong> Fitted gebruikt je eigen AI-account: je betaalt de AI-aanbieder rechtstreeks, of niets met een gratis abonnement.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>AI</th>
+<th>Kosten</th>
+<th>Goed om te weten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude (Anthropic)</td>
+<td>Betalen per gebruik</td>
+<td>Het betrouwbaarst voor vertalen en cv importeren.</td>
+</tr>
+<tr>
+<td>Google Gemini</td>
+<td>Gratis abonnement</td>
+<td>Met het gratis abonnement mag Google wat je stuurt gebruiken om zijn producten te verbeteren; Fitted toont een waarschuwing.</td>
+</tr>
+<tr>
+<td>Groq</td>
+<td>Gratis tegoed</td>
+<td>Snel; goed voor regels schrijven.</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td>Gratis modellen</td>
+<td>Eén sleutel voor veel AI-modellen.</td>
+</tr>
+<tr>
+<td>Local AI (Ollama)</td>
+<td>Gratis</td>
+<td>Draait op je eigen computer, er gaat niets naar buiten. Installeer eerst Ollama en download een model.</td>
+</tr>
+<tr>
+<td>Andere vergelijkbare dienst</td>
+<td>Verschilt</td>
+<td>Voor diensten die werken zoals die van OpenAI.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kies er een, klik op <strong>Get a key</strong>, plak de sleutel en klik op <strong>Connect</strong>. Fitted test de sleutel en kiest een geschikt model; dat kun je daarna nog wijzigen.</p>
+<p><strong>Use a different AI for translations and CV import.</strong> Vink dit aan om een sterkere AI te gebruiken voor het zware werk (je hele cv vertalen en importeren) en een goedkopere of gratis AI voor het schrijven van regels.</p>
+<p><strong>CV languages.</strong> Engels is altijd de basis. Klik op <strong>Change</strong> om tot 9 talen toe te voegen: Nederlands, Duits, Frans, Spaans, Italiaans, Portugees, Zweeds, Deens en Noors. Je AI vertaalt je cv één keer; onder My CV controleer en bewerk je elke vertaling.</p>
+<p><strong>Licence.</strong> Toont hoeveel gratis vacatures je nog hebt. Na je aankoop plak je hier je licentiesleutel en klik je op <strong>Activate</strong>. Eén licentie werkt op 2 apparaten; met <strong>Deactivate on this computer</strong> verhuis je hem.</p>
+<p><strong>Version.</strong> Toont je versie en laat je op updates controleren.</p>
+<h2 id="nl-4-nieuwe-sollicitatie-new-application">4. Nieuwe sollicitatie (New application)</h2>
+<p>Hier stem je je cv af op één vacature, in drie stappen op één pagina.</p>
+<figure><img src="img/guide/02-new.jpg" alt="Nieuwe sollicitatie, voordat er een vacature is geladen" loading="lazy"><figcaption>Nieuwe sollicitatie, voordat er een vacature is geladen</figcaption></figure>
+
+<p><strong>Stap 1: Job listing (de vacature)</strong></p>
+<ol>
+<li>Plak de link naar de vacature en klik op <strong>Fetch listing</strong>. Fitted vult het bedrijf, de functie en de sollicitatielink in. Controleer ze.</li>
+<li>Laadt een site niet? Open <strong>Listing text</strong> en plak de tekst van de vacature die je in je browser kopieerde.</li>
+<li>Het label rechtsboven zegt welke cv je verstuurt, op basis van de taal van de vacature (bijvoorbeeld "Send the Dutch version").</li>
+</ol>
+<p>Op Android kun je ook vanuit de vacature zelf beginnen: tik op <strong>Delen</strong> bij een vacature in je browser, LinkedIn of een vacature-app en kies <strong>Fitted</strong>.</p>
+<p><strong>Stap 2: Tailor your experience (je ervaring afstemmen)</strong></p>
+<figure><img src="img/guide/03-tailor.jpg" alt="Afstemmen: voorgestelde regels per baan" loading="lazy"><figcaption>Afstemmen: voorgestelde regels per baan</figcaption></figure>
+
+<ol>
+<li>Klik op <strong>Draft with AI</strong>. Per baan schrijft de AI één regel die past bij wat de vacature vraagt, alleen met feiten uit die baan en je extra feiten.</li>
+<li>De gele notitie laat zien op welke eis uit de vacature de regel ingaat.</li>
+<li>Klik links op elke baan om de regel na te lopen, in elke taal. Pas de woorden gerust aan; de regel moet waar blijven en onder de 200 tekens.</li>
+<li>Het lijstje onder het tekstvak laat zien waar de regel komt: als tweede punt bij die baan.</li>
+<li><strong>Reset to default</strong> zet de standaardregel van die baan terug.</li>
+</ol>
+<p>Stippen links: grijs = standaardregel, oranje = voorgesteld door de AI en nog niet nagelopen, groen = door jou gecontroleerd.</p>
+<p><strong>Extra's van Fitted Pro</strong> (ook in de gratis proefperiode)</p>
+<ul>
+<li><strong>Reworded points</strong> (herschreven punten): tot 2 extra punten per baan, herschreven voor de vacature met dezelfde feiten. Ze staan onder de regel van die baan; met <strong>Keep the original</strong> zet je er een terug.</li>
+<li><strong>Profile and skills for this ad</strong>: onder de banen je profiel herschreven voor de functie, en je vaardigheden met de belangrijkste eerst. <strong>Keep my own profile</strong> en <strong>Keep my order</strong> maken dat ongedaan.</li>
+</ul>
+<p>Met Fitted (zonder Pro) staat op die plekken een knop <strong>Get Pro</strong>.</p>
+<p><strong>Stap 3: Build (maken)</strong></p>
+<p>Klik op <strong>Build CVs</strong>. Eerst bevestig je elke aangepaste regel (volgend hoofdstuk), daarna maakt Fitted een pdf in elk van je talen en zet de vacature bij Applications.</p>
+<p><strong>Start over</strong> (rechtsboven) maakt de pagina leeg voor de volgende vacature.</p>
+<h2 id="nl-5-elke-aangepaste-regel-bevestigen">5. Elke aangepaste regel bevestigen</h2>
+<p>Er wordt niets gemaakt voordat je elke aangepaste regel hebt bevestigd. Recruiters vragen naar wat er op je cv staat, dus elke regel moet iets zijn waar je over kunt vertellen.</p>
+<figure><img src="img/guide/04-confirm.jpg" alt="Een aangepaste regel bevestigen" loading="lazy"><figcaption>Een aangepaste regel bevestigen</figcaption></figure>
+
+<p>Voor elke baan met een nieuwe regel zie je:</p>
+<ul>
+<li>de eis uit de vacature waar hij op ingaat (geel);</li>
+<li>de nieuwe regel in elke taal;</li>
+<li>de standaardregel die hij vervangt.</li>
+</ul>
+<p>Met Pro staan herschreven punten in dezelfde stap als de regel van die baan, en laat een aparte stap je nieuwe profiel zien. Die bevestig je op dezelfde manier.</p>
+<p>Vink <strong>This is true for this role, and I can back it up in an interview</strong> aan (dit klopt en je kunt het in een gesprek onderbouwen) en klik op <strong>Confirm and continue</strong>.</p>
+<ul>
+<li><strong>Edit this line</strong> brengt je terug om de woorden aan te passen.</li>
+<li><strong>Back</strong> gaat terug naar de vorige baan.</li>
+<li><strong>Cancel</strong> stopt zonder iets te maken.</li>
+</ul>
+<p>De laatste stap, <strong>Check the job details</strong>, toont bedrijf, functie, sollicitatielink, talen en welke versie je verstuurt. Vink aan dat het klopt en klik op <strong>Build</strong>.</p>
+<p><strong>CV-stijl.</strong> Kies in die laatste stap hoe je cv's eruitzien:</p>
+<ul>
+<li><strong>Classic:</strong> petrolblauw, kopjes met ruimte tussen de letters.</li>
+<li><strong>Modern:</strong> een groenblauwe kopbalk.</li>
+<li><strong>Elegant:</strong> schreefletter, bordeauxrood.</li>
+<li><strong>Minimal:</strong> zwart en grijs.</li>
+<li><strong>Bold:</strong> grote naam, amberkleurige accenten.</li>
+</ul>
+<p>Klik op <strong>Preview with my CV</strong> om je eigen cv in die stijl te openen. Fitted onthoudt je keuze voor de volgende vacature, en <strong>Preview</strong> in My CV gebruikt hem ook.</p>
+<figure><img src="img/guide/05b-styles.jpg" alt="De laatste stap: een cv-stijl kiezen" loading="lazy"><figcaption>De laatste stap: een cv-stijl kiezen</figcaption></figure>
+
+<h2 id="nl-6-je-cv-s-zijn-klaar">6. Je cv's zijn klaar</h2>
+<p>Na het maken toont een groen vak je pdf's, één per taal, en welke je verstuurt.</p>
+<figure><img src="img/guide/05-result.jpg" alt="De cv's zijn klaar" loading="lazy"><figcaption>De cv's zijn klaar</figcaption></figure>
+
+<ul>
+<li><strong>Send ...</strong> (groen label): de versie in de taal van de vacature. Die verstuur je.</li>
+<li><strong>Open English / Open Nederlands</strong>: opent de pdf.</li>
+<li><strong>Open folder</strong> (Windows en Mac): de map van deze vacature in Fitted op je bureaublad. Op Android krijg je in plaats daarvan <strong>Share</strong>-knoppen, om een pdf te mailen, via WhatsApp te sturen of te uploaden op een vacaturesite.</li>
+<li><strong>See applications</strong>: gaat naar je sollicitatieoverzicht.</li>
+</ul>
+<p><strong>Een regel aanpassen na het maken.</strong> De pdf's die je verstuurt, zijn gewone tekst. Voor een laatste wijziging klik je op <strong>Editable copies</strong>: dezelfde cv's, waarin de afgestemde regels nog te bewerken zijn in een pdf-lezer zoals Edge, Chrome of Acrobat. Pdf-lezers markeren die bewerkbare regels, dus verstuur de gewone pdf, of pas de regel aan in Fitted en maak de cv's opnieuw (dezelfde vacature wordt bijgewerkt, niet dubbel toegevoegd).</p>
+<h2 id="nl-7-sollicitaties-applications">7. Sollicitaties (Applications)</h2>
+<p>Elke vacature waarvoor je cv's maakt, komt hier, nieuwste bovenaan, met status en bestanden. Het overzicht staat ook als applications.xlsx in je map Fitted.</p>
+<figure><img src="img/guide/06-applications.jpg" alt="Het sollicitatieoverzicht" loading="lazy"><figcaption>Het sollicitatieoverzicht</figcaption></figure>
+
+<ul>
+<li><strong>Totalen</strong> bovenaan: alle vacatures, nog te solliciteren, gesolliciteerd, gesprekken, aanbiedingen.</li>
+<li><strong>Status</strong>: kies To apply, Applied, Interview, Offer, Rejected of Withdrawn. Wordt meteen opgeslagen.</li>
+<li><strong>Send</strong>: welke taalversie je verstuurt.</li>
+<li><strong>Apply</strong> opent de sollicitatielink, <strong>Ad</strong> de vacature.</li>
+<li><strong>EN / NL</strong> (een knop per taal) opent die pdf.</li>
+<li><strong>Folder</strong> (Windows en Mac) opent de map van de vacature; op Android stuurt <strong>Share</strong> de pdf die je moet versturen.</li>
+<li><strong>Open in Excel</strong> (Mac: <strong>Open spreadsheet</strong>; Android: <strong>Share spreadsheet</strong>) opent of deelt het hele overzicht.</li>
+</ul>
+<p>Op een telefoon staat elke vacature op een eigen kaart.</p>
+<h2 id="nl-8-mijn-cv-my-cv">8. Mijn cv (My CV)</h2>
+<p>My CV is de basis van elke cv die je maakt. Afgestemde regels gebruiken alleen wat hier staat, dus houd het compleet en waar.</p>
+<figure><img src="img/guide/07-mycv.jpg" alt="De cv-editor" loading="lazy"><figcaption>De cv-editor</figcaption></figure>
+
+<p><strong>Taaltabbladen.</strong> Engels (de basis) en elke extra taal hebben een eigen tabblad. Pas je de Engelse versie aan, dan krijgen de andere talen een oranje stip en een knop <strong>Update translation</strong>. Vertalingen kun je ook zelf bewerken.</p>
+<p><strong>Onderdelen</strong></p>
+<ul>
+<li><strong>About you</strong>: naam, kopregel, contactgegevens (één per regel), profiel.</li>
+<li><strong>Work experience</strong>: per baan een kaart, nieuwste bovenaan. Vul functie, bedrijf, periode en wat je deed in (één punt per regel).</li>
+<li><strong>Tailor this job</strong>: zet dit uit voor banen die moeten blijven zoals ze zijn, zoals een bijbaan tijdens je studie. Die krijgen nooit een afgestemde regel.</li>
+<li><strong>Default tailored line</strong>: het tweede punt van die baan als je niet afstemt op een vacature. Een waar feit, onder de 200 tekens.</li>
+<li>Met de pijlen zet je een baan hoger of lager; <strong>Remove</strong> verwijdert hem.</li>
+<li><strong>Key achievements, Skills, Languages, Certifications, Education, References</strong> (resultaten, vaardigheden, talen, certificaten, opleiding, referenties).</li>
+<li><strong>Extra true facts</strong>: dingen die waar zijn maar niet op je cv staan. De AI mag ze gebruiken bij het afstemmen, en verder niets. Eén per regel; wees precies over wat je wel en niet deed.</li>
+<li><strong>Headings</strong>: pas per taal de kopjes van de onderdelen aan als je wilt.</li>
+</ul>
+<p><strong>Knoppen</strong></p>
+<ul>
+<li><strong>Preview PDF</strong>: laat de cv zien zoals hij wordt.</li>
+<li><strong>Save changes</strong>: wordt actief zodra je iets wijzigt. Verlaat je My CV met niet-opgeslagen wijzigingen, dan vraagt Fitted of je wilt opslaan.</li>
+<li><strong>Replace with a new CV file</strong>: importeert een nieuwe cv (hoofdstuk 2). Je huidige cv blijft als back-up in de map Fitted.</li>
+</ul>
+<h2 id="nl-9-hulp-updates-en-je-licentie">9. Hulp, updates en je licentie</h2>
+<figure><img src="img/guide/09-help.jpg" alt="Help and feedback" loading="lazy"><figcaption>Help and feedback</figcaption></figure>
+
+<p><strong>Help and feedback.</strong> Korte antwoorden op veelgestelde vragen, en een formulier dat rechtstreeks naar help@getfitted.nl gaat. Kies Problem, Idea of Question, schrijf een paar woorden en klik op <strong>Open in email</strong> (of <strong>Copy instead</strong>). Laat <strong>Add app version and system version</strong> aangevinkt: zo is een probleem sneller opgelost.</p>
+<p><strong>Updates.</strong> Fitted kijkt bij het starten of er een nieuwe versie is. Er verschijnt een balk: klik op <strong>Update and restart</strong> (Android: <strong>Update</strong>). Je cv, instellingen en sollicitaties blijven onaangeroerd. Houd Fitted op een Mac in de map Apps, zodat het zichzelf kan bijwerken. Sta op Android de eerste keer toe dat Fitted updates installeert.</p>
+<p><strong>Gratis proberen en licentie</strong></p>
+<ul>
+<li>Je eerste 3 vacatures zijn gratis. Opnieuw maken voor een vacature die je al deed, telt niet mee.</li>
+<li>Daarna koop je eenmalig Fitted (€15: één afgestemde regel per baan) of Fitted Pro (€25: tot 3 regels per baan, plus profiel en vaardigheden per vacature), via de zijbalk of Settings. Activeer hem met de sleutel uit je aankoopmail. Heb je Fitted al? Settings → Upgrade to Pro (€10).</li>
+<li>Eén licentie werkt op 2 apparaten, in elke combinatie van computers en telefoons.</li>
+<li>Alles wat je tijdens het proberen maakte, blijft van jou.</li>
+<li>Niet tevreden? Binnen 14 dagen krijg je je geld terug: mail help@getfitted.nl met je bestelnummer.</li>
+</ul>
+<h2 id="nl-10-problemen-oplossen">10. Problemen oplossen</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Probleem</th>
+<th>Wat je doet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Een vacaturesite laadt niet</td>
+<td>Sommige sites vragen een login of blokkeren apps. Kopieer de vacaturetekst in je browser en plak hem onder <strong>Listing text</strong>.</td>
+</tr>
+<tr>
+<td>"Set up an AI first"</td>
+<td>Open <strong>Settings → AI</strong>, plak een sleutel en klik op <strong>Connect</strong>.</td>
+</tr>
+<tr>
+<td>De AI geeft een fout of limietmelding</td>
+<td>Gratis abonnementen hebben een limiet per minuut of per dag. Wacht even, of kies een andere AI in Settings.</td>
+</tr>
+<tr>
+<td>Importeren meldt dat er nauwelijks tekst te lezen is</td>
+<td>Het bestand is waarschijnlijk een scan. Gebruik een pdf met echte tekst, een Word-bestand, of begin from scratch.</td>
+</tr>
+<tr>
+<td>"A file is open in another program"</td>
+<td>Sluit applications.xlsx in Excel, of de pdf, en probeer het opnieuw.</td>
+</tr>
+<tr>
+<td>Windows meldt "Windows heeft uw pc beschermd"</td>
+<td>Klik op <strong>Meer informatie</strong> en dan op <strong>Toch uitvoeren</strong>. Alleen de eerste keer.</td>
+</tr>
+<tr>
+<td>Mac zegt dat Fitted niet geopend kan worden</td>
+<td><strong>Systeeminstellingen → Privacy en beveiliging → Toch openen</strong>. Alleen de eerste keer.</td>
+</tr>
+<tr>
+<td>Android installeert het bestand niet</td>
+<td>Sta installaties via je browser toe (of, voor updates, via Fitted) als Android erom vraagt.</td>
+</tr>
+<tr>
+<td>Mac-update vraagt Fitted te verplaatsen</td>
+<td>Sleep Fitted naar de map Apps, open het vanaf daar en update opnieuw.</td>
+</tr>
+<tr>
+<td>Iets anders</td>
+<td><strong>Help and feedback → Send feedback</strong>, of mail naar help@getfitted.nl.</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Bron van het cijfer over gesprekken: Huntr, <a href="https://huntr.co/research/job-search-trends-q2-2026">Job Search Trends Q2 2026</a>. Het cijfer laat zien dat afgestemde cv's en meer gesprekken samengaan; het bewijst niet dat afstemmen de oorzaak is, en niemand kan je gesprekken beloven.</em></p>
+</div>
+</div></main>
+<footer><div class="wrap">
+  <span>© 2026 FITTED · Fitted CV</span>
+  <a href="index.html"><span data-l="en">Home</span><span data-l="nl">Home</span></a>
+  <a href="guide.html"><span data-l="en">User guide</span><span data-l="nl">Handleiding</span></a>
+  <a href="privacy.html"><span data-l="en">Privacy policy</span><span data-l="nl">Privacyverklaring</span></a>
+  <a href="terms.html"><span data-l="en">Terms of use</span><span data-l="nl">Gebruiksvoorwaarden</span></a>
+  <a href="refund.html"><span data-l="en">Refunds</span><span data-l="nl">Geld terug</span></a>
+  <span>info@getfitted.nl</span>
+</div></footer>
+<script>
+(function(){const r=document.documentElement;function set(l){r.lang=l;document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.set===l)));
+document.title=document.querySelector('title').dataset[l];try{localStorage.setItem('fitted-lang',l)}catch(e){}}
+let s='en';try{s=localStorage.getItem('fitted-lang')||((navigator.language||'').toLowerCase().startsWith('nl')?'nl':'en')}catch(e){}
+set(s);document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>set(b.dataset.set)));})();
+</script>
+</body>
+</html>
