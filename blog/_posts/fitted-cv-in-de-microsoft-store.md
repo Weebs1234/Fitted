@@ -4,7 +4,7 @@ slug: fitted-cv-in-de-microsoft-store
 pair: fitted-cv-in-the-microsoft-store
 title: Fitted CV staat nu in de Microsoft Store
 description: Fitted CV is te downloaden via de Microsoft Store. Gratis te installeren, je eerste 3 vacatures gratis met alle Pro-functies, en vanzelf bijgewerkt.
-date: LAUNCH-DATE
+date: 2026-11-05
 ---
 Fitted CV is vanaf vandaag te downloaden via de [Microsoft Store](https://apps.microsoft.com/detail/9N3J1XHVJQ75). Je installeert het met één klik, en de Store houdt de app voor je bij.
 

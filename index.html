@@ -7,10 +7,10 @@
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Fitted CV: every CV, fitted to the job">
-<meta property="og:description" content="Coming soon for Windows, Mac and Android. Register your interest.">
+<meta property="og:description" content="Now in the Microsoft Store for Windows. Your first 3 jobs free. Mac and Android coming soon.">
 <meta property="og:image" content="https://getfitted.nl/img/share.png">
 <title>Fitted CV</title>
-<meta name="description" content="Fitted CV tailors your CV to every job ad, one true line at a time, for Windows, Mac and Android. Coming soon: register your interest.">
+<meta name="description" content="Fitted CV tailors your CV to every job ad, one true line at a time, Now in the Microsoft Store for Windows; Mac and Android coming soon.">
 <style>
 @font-face{font-family:"Barlow SC";src:url("fonts/barlow-semi-condensed-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"Barlow SC";src:url("fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
@@ -71,6 +71,7 @@ header .wrap{display:flex;align-items:center;gap:16px;padding-block:22px}
 .phone{align-self:end;justify-self:center;width:min(330px,100%);border-radius:34px 34px 0 0;border:10px solid #0a1d29;border-bottom:0;background:#0a1d29;box-shadow:0 -10px 60px -10px rgba(0,0,0,.5);overflow:hidden;aspect-ratio:390/600}
 .phone img{width:100%;height:100%!important;object-fit:cover;object-position:top}
 
+.getit{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 18px} .btn.store{display:inline-block;text-decoration:none} .getsd{font-size:14.5px;color:#c9dde8}
 /* sign-up form */
 .signup{background:var(--paper);color:var(--ink);border-radius:16px;padding:18px;box-shadow:var(--shadow);max-width:520px;margin-bottom:56px}
 .signup h2{font-size:22px;font-weight:700;margin-bottom:4px}
@@ -165,21 +166,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
   <section class="hero" aria-labelledby="h1">
     <div class="hero-in">
       <div>
-        <p class="soon"><span data-l="en">Coming soon</span><span data-l="nl">Binnenkort</span></p>
+        <p class="soon"><span data-l="en">Now on Windows</span><span data-l="nl">Nu voor Windows</span></p>
         <h1 id="h1"><span data-l="en">Every CV, <em>fitted</em> to the job.</span><span data-l="nl">Elk cv, <em>passend</em> bij de vacature.</span></h1>
         <p class="lead" data-l="en">Paste a job ad. Fitted CV rewrites the lines recruiters read first so they match it, using only what you really did, and makes a ready-to-send PDF in English, Dutch or eight more languages.</p>
         <p class="lead" data-l="nl">Plak een vacature. Fitted CV herschrijft de regels die recruiters als eerste lezen zodat ze aansluiten, alleen met wat je echt gedaan hebt, en maakt een verzendklare pdf in het Nederlands, Engels of acht andere talen.</p>
-        <ul class="plat" aria-label="Platforms"><li>Windows</li><li>Mac</li><li>Android</li></ul>
+        <p class="getit"><a class="btn store" href="https://apps.microsoft.com/detail/9N3J1XHVJQ75" rel="noopener"><span data-l="en">Get it from the Microsoft Store</span><span data-l="nl">Download in de Microsoft Store</span></a><span class="getsd"><span data-l="en">Free to install. Your first 3 jobs free, with every Pro feature.</span><span data-l="nl">Gratis te installeren. Je eerste 3 vacatures gratis, met alle Pro-functies.</span></span></p>
+        <ul class="plat" aria-label="Platforms"><li>Windows</li><li><span data-l="en">Mac: soon</span><span data-l="nl">Mac: binnenkort</span></li><li><span data-l="en">Android: soon</span><span data-l="nl">Android: binnenkort</span></li></ul>
         <form class="signup" id="signup1" novalidate>
-          <h2><span data-l="en">Be the first to know</span><span data-l="nl">Hoor het als eerste</span></h2>
-          <p class="sd" data-l="en">One email when Fitted CV launches. Nothing else.</p>
-          <p class="sd" data-l="nl">Eén e-mail zodra Fitted CV beschikbaar is. Verder niets.</p>
+          <h2><span data-l="en">On a Mac or Android?</span><span data-l="nl">Op een Mac of Android?</span></h2>
+          <p class="sd" data-l="en">One email when Fitted CV is out for Mac and Android. Nothing else.</p>
+          <p class="sd" data-l="nl">Eén e-mail zodra Fitted CV er is voor Mac en Android. Verder niets.</p>
           <div class="row">
             <label class="sr" for="email1" style="position:absolute;left:-9999px">Email</label>
             <input id="email1" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
             <button class="btn" type="submit"><span data-l="en">Notify me</span><span data-l="nl">Houd me op de hoogte</span></button>
           </div>
-          <label class="consent"><input id="consent1" type="checkbox" required><span><span data-l="en">I agree that FITTED emails me once when Fitted CV launches. You can unsubscribe in one click.</span><span data-l="nl">Ik vind het goed dat FITTED me één keer mailt zodra Fitted CV beschikbaar is. Afmelden kan met één klik.</span></span></label>
+          <label class="consent"><input id="consent1" type="checkbox" required><span><span data-l="en">I agree that FITTED emails me once when Fitted CV is out for Mac and Android. You can unsubscribe in one click.</span><span data-l="nl">Ik vind het goed dat FITTED me één keer mailt zodra Fitted CV er is voor Mac en Android. Afmelden kan met één klik.</span></span></label>
           <p class="msg" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
@@ -271,10 +273,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 <div class="wrap">
   <section class="closing" aria-labelledby="close">
     <div>
-      <h2 id="close"><span data-l="en">Launching soon at getfitted.nl</span><span data-l="nl">Binnenkort op getfitted.nl</span></h2>
+      <h2 id="close"><span data-l="en">Get Fitted CV for Windows</span><span data-l="nl">Haal Fitted CV voor Windows</span></h2>
       <div class="stitchrule" aria-hidden="true"></div>
-      <p data-l="en" style="margin:0;color:var(--ink-2)">Leave your email and we'll tell you the day it's ready.</p>
-      <p data-l="nl" style="margin:0;color:var(--ink-2)">Laat je e-mailadres achter, dan laten we je weten wanneer het klaar is.</p>
+      <p data-l="en" style="margin:0 0 14px;color:var(--ink-2)">Free from the Microsoft Store. On a Mac or Android? Leave your email and we'll tell you the day it's ready.</p><p data-l="en"><a class="btn store" href="https://apps.microsoft.com/detail/9N3J1XHVJQ75" rel="noopener">Get it from the Microsoft Store</a></p>
+      <p data-l="nl" style="margin:0 0 14px;color:var(--ink-2)">Gratis in de Microsoft Store. Op een Mac of Android? Laat je e-mailadres achter, dan laten we je weten wanneer het klaar is.</p><p data-l="nl"><a class="btn store" href="https://apps.microsoft.com/detail/9N3J1XHVJQ75" rel="noopener">Download in de Microsoft Store</a></p>
     </div>
     <form class="signup" id="signup2" novalidate>
       <div class="row">
@@ -282,7 +284,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
         <input id="email2" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
         <button class="btn" type="submit"><span data-l="en">Notify me</span><span data-l="nl">Houd me op de hoogte</span></button>
       </div>
-      <label class="consent"><input id="consent2" type="checkbox" required><span><span data-l="en">I agree that FITTED emails me once when Fitted CV launches. You can unsubscribe in one click.</span><span data-l="nl">Ik vind het goed dat FITTED me één keer mailt zodra Fitted CV beschikbaar is. Afmelden kan met één klik.</span></span></label>
+      <label class="consent"><input id="consent2" type="checkbox" required><span><span data-l="en">I agree that FITTED emails me once when Fitted CV is out for Mac and Android. You can unsubscribe in one click.</span><span data-l="nl">Ik vind het goed dat FITTED me één keer mailt zodra Fitted CV er is voor Mac en Android. Afmelden kan met één klik.</span></span></label>
       <p class="msg" role="status" aria-live="polite" hidden></p>
     </form>
   </section>
@@ -291,8 +293,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 
 <section class="wrap" aria-labelledby="priv" style="padding-block:0 28px">
   <h2 id="priv" style="font-size:20px;margin-bottom:6px"><span data-l="en">Privacy</span><span data-l="nl">Privacy</span></h2>
-  <p data-l="en" style="margin:0;color:var(--ink-2);font-size:14.5px;max-width:75ch">If you sign up, FITTED stores your email address and language with MailerLite (an EU-based email service) for one purpose: to tell you when Fitted CV launches. We don't share it with anyone else. You can unsubscribe with the link in any email, or ask us to delete your address at info@getfitted.nl. Read the full <a href="privacy.html">privacy policy</a>.</p>
-  <p data-l="nl" style="margin:0;color:var(--ink-2);font-size:14.5px;max-width:75ch">Als je je aanmeldt, bewaart FITTED je e-mailadres en taal bij MailerLite (een e-maildienst in de EU) voor één doel: je laten weten wanneer Fitted CV beschikbaar is. We delen het met niemand anders. Je kunt je afmelden via de link in elke e-mail, of ons vragen je adres te verwijderen via info@getfitted.nl. Lees de volledige <a href="privacy.html">privacyverklaring</a>.</p>
+  <p data-l="en" style="margin:0;color:var(--ink-2);font-size:14.5px;max-width:75ch">If you sign up, FITTED stores your email address and language with MailerLite (an EU-based email service) for one purpose: to tell you when Fitted CV is out for Mac and Android. We don't share it with anyone else. You can unsubscribe with the link in any email, or ask us to delete your address at info@getfitted.nl. Read the full <a href="privacy.html">privacy policy</a>.</p>
+  <p data-l="nl" style="margin:0;color:var(--ink-2);font-size:14.5px;max-width:75ch">Als je je aanmeldt, bewaart FITTED je e-mailadres en taal bij MailerLite (een e-maildienst in de EU) voor één doel: je laten weten wanneer Fitted CV er is voor Mac en Android. We delen het met niemand anders. Je kunt je afmelden via de link in elke e-mail, of ons vragen je adres te verwijderen via info@getfitted.nl. Lees de volledige <a href="privacy.html">privacyverklaring</a>.</p>
 </section>
 
 <footer><div class="wrap">
