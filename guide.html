@@ -68,7 +68,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <li><strong>Pick a style and build.</strong> You get one PDF per language, plus a row in your applications list (sections 5 and 6).</li>
 </ol>
 <p>The rest of this guide walks through every page of the app in the order you meet them.</p>
-<nav class="toc"><strong>Contents</strong><ol><li><a href="#en-1-getting-started">Getting started</a></li><li><a href="#en-2-set-up-your-cv">Set up your CV</a></li><li><a href="#en-3-settings-ai-languages-licence">Settings: AI, languages, licence</a></li><li><a href="#en-4-new-application">New application</a></li><li><a href="#en-5-confirm-each-changed-line">Confirm each changed line</a></li><li><a href="#en-6-your-cvs-are-ready">Your CVs are ready</a></li><li><a href="#en-7-applications">Applications</a></li><li><a href="#en-8-my-cv">My CV</a></li><li><a href="#en-9-help-updates-and-your-licence">Help, updates and your licence</a></li><li><a href="#en-10-troubleshooting">Troubleshooting</a></li></ol></nav><h2 id="en-1-getting-started">1. Getting started</h2>
+<nav class="toc"><strong>Contents</strong><ol><li><a href="#en-1-getting-started">Getting started</a></li><li><a href="#en-2-set-up-your-cv">Set up your CV</a></li><li><a href="#en-3-settings-ai-languages-licence">Settings: AI, languages, licence</a></li><li><a href="#en-4-new-application">New application</a></li><li><a href="#en-5-confirm-each-changed-line">Check and confirm</a></li><li><a href="#en-6-your-cvs-are-ready">Your CVs are ready</a></li><li><a href="#en-7-applications">Applications</a></li><li><a href="#en-8-my-cv">My CV</a></li><li><a href="#en-9-help-updates-and-your-licence">Help, updates and your licence</a></li><li><a href="#en-10-troubleshooting">Troubleshooting</a></li></ol></nav><h2 id="en-1-getting-started">1. Getting started</h2>
 <p>Download Fitted from getfitted.nl. It is free for your first 3 jobs.</p>
 <div class="tbl"><table>
 <thead>
@@ -191,6 +191,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 </table></div>
 <p>Pick one, click <strong>Get a key</strong>, paste it and click <strong>Connect</strong>. Fitted tests the key and picks a suitable model; you can change the model afterwards.</p>
 <p><strong>A different AI for translations and CV import.</strong> Tick this to use a stronger AI for the heavy jobs (translating your whole CV, importing it) and a cheaper or free one for drafting lines.</p>
+<p><strong>Backup AIs.</strong> Tick <strong>Backup AIs for when an AI reaches its free limit</strong> and add up to two more AIs, such as Groq and Google Gemini (both free). When your AI is over its limit or very busy, Fitted switches to the next one by itself and tells you which one did the job. If you have no backup yet and hit a limit, the message has an <strong>Add a free backup AI</strong> button that takes you straight there.</p>
 <p><strong>CV languages.</strong> Click <strong>Change</strong> to choose the languages you apply in: English, Dutch, German, French, Spanish, Italian, Portuguese, Swedish, Danish and Norwegian. Your AI translates your CV once into each new language; you can check and edit each translation under My CV.</p>
 <p><strong>Base CV.</strong> Your base CV is in the language you imported or wrote it in: a German CV stays German. You edit the base under My CV, and the other languages are translated from it. To make another language the base, pick it here (its translation must be up to date). The base language can't be removed.</p>
 <p><strong>CV photo.</strong> Click <strong>Add photo</strong> and choose a JPG or PNG. Fitted turns it upright, crops it to a portrait and shows a small preview. Under <strong>Show on</strong>, tick the languages whose CVs should show it; German is ticked by default. The photo sits at the top right in every CV style. A photo is usual in Germany, Austria and Switzerland, and best left off in the Netherlands, the UK and the US. <strong>Change photo</strong> and <strong>Remove</strong> do what they say.</p>
@@ -207,7 +208,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <ol>
 <li>Paste the link to the job ad and click <strong>Fetch listing</strong>. Fitted fills in the company, the role and the apply link. Check them.</li>
 <li>A site won't load? Open <strong>Listing text</strong>, and paste the ad text you copied from your browser.</li>
-<li>At the top right, <strong>CVs for this job</strong> shows your languages, with the ad's language selected: a German ad gives only a German CV. Click another language to add it for this job.</li>
+<li>At the top right, <strong>CVs for this job</strong> shows your languages. You get one CV: your base language, or the ad's language once the ad is loaded (a German ad gives only a German CV). Click another language to add it for this job.</li>
 <li>Applying through an agency? Tick <strong>Via a recruiter</strong> under Company, fill in the agency, and the employer if the ad names it. Fitted ticks it for you when the ad says "our client". Your list then shows "Holidu (via Hirewise)" or "Hirewise (recruiter)".</li>
 </ol>
 <p>On Android you can also start from the ad itself: tap <strong>Share</strong> on a job ad in your browser, LinkedIn or a job app, and choose <strong>Fitted</strong>.</p>
@@ -241,23 +242,21 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <p>When you build, you confirm the letter is true (next section), and it is saved as a PDF in your CV style, next to your CVs.</p>
 <figure><img src="img/guide/12-letter.jpg" alt="A drafted cover letter, ready to check" loading="lazy"><figcaption>A drafted cover letter, ready to check</figcaption></figure>
 <p><strong>Step 4: Build</strong></p>
-<p>Click <strong>Build CVs</strong>. You first confirm each changed line (next section), then Fitted makes a PDF in each of your languages and adds the job to Applications.</p>
+<p>Click <strong>Build CVs</strong>. You first check everything on one review screen (next section), then Fitted makes a PDF in each language you picked and adds the job to Applications. Afterwards the button says <strong>Build again</strong>.</p>
 <p><strong>Start over</strong> (top right) clears the page for the next job.</p>
-<h2 id="en-5-confirm-each-changed-line">5. Confirm each changed line</h2>
+<h2 id="en-5-confirm-each-changed-line">5. Check and confirm</h2>
 <p>Nothing is built until you have confirmed every changed line. Recruiters ask about what's on your CV, so each line has to be something you can talk about.</p>
-<figure><img src="img/guide/04-confirm.jpg" alt="Confirming a changed line" loading="lazy"><figcaption>Confirming a changed line</figcaption></figure>
+<figure><img src="img/guide/04-confirm.jpg" alt="The review screen before building" loading="lazy"><figcaption>One review screen: tick each part, then build</figcaption></figure>
 
-<p>For each job with a new line you see:</p>
+<p>Everything to check is on one screen, each part with its own tick:</p>
 <ul>
-<li>the requirement in the ad it answers (yellow);</li>
-<li>the new line in each language;</li>
-<li>the default line it replaces.</li>
+<li>each job with a new line: the requirement in the ad it answers (yellow), the new line, the default line it replaces, and any point that is left out because your line already says it;</li>
+<li>with Pro: reworded points (with the job's line), your new profile and your cover letter;</li>
+<li>the job details and the CV style, at the bottom.</li>
 </ul>
-<p>With Pro, reworded points are listed in the same step as the job's line, and a separate step shows your new profile, and another your cover letter. You confirm those the same way.</p>
-<p>Tick <strong>This is true for this role, and I can back it up in an interview</strong>, then click <strong>Confirm and continue</strong>.</p>
+<p>Tick <strong>This is true for this role, and I can back it up in an interview</strong> for each part. <strong>Build CV</strong> works once everything is ticked.</p>
 <ul>
-<li><strong>Edit this line</strong> takes you back to change the wording.</li>
-<li><strong>Back</strong> returns to the previous job.</li>
+<li><strong>Edit this line</strong> (next to each part) takes you back to change the wording.</li>
 <li><strong>Cancel</strong> stops without building anything.</li>
 </ul>
 <p>The last step, <strong>Check the job details</strong>, shows the company, role, apply link, languages and which version to send. Tick that they are correct and click <strong>Build</strong>.</p>
@@ -324,6 +323,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <p>My CV is the base of every CV you build. Tailored lines draw only on what's here, so keep it complete and true.</p>
 <figure><img src="img/guide/07-mycv.jpg" alt="The CV editor" loading="lazy"><figcaption>The CV editor</figcaption></figure>
 
+<p><strong>Find repeats.</strong> Click <strong>Find repeats</strong> at the top to see points in the same job that say the same thing. For each pair you choose: remove one, or keep both. Nothing changes until you choose, and you save as usual.</p>
 <p><strong>Language tabs.</strong> Your base language and each extra language have their own tab. When you save a change in the base version, Fitted translates just that change into your other languages straight away; phone numbers, email and links are copied as they are, and edits you made in another language stay. If that can't happen (no AI connected, or its limit is reached), the language gets an amber dot and an <strong>Update translation</strong> button. Each language tab also has <strong>Translate again from ...</strong> for a translation that no longer matches. Translations can also be edited by hand.</p>
 <p><strong>Sections</strong></p>
 <ul>
@@ -424,7 +424,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <li><strong>Kies een stijl en maak je cv's.</strong> Je krijgt per taal een pdf, en een regel in je sollicitatieoverzicht (hoofdstuk 5 en 6).</li>
 </ol>
 <p>De rest van deze handleiding loopt alle pagina's van de app langs in de volgorde waarin je ze tegenkomt. Staat je computer of telefoon in het Nederlands, dan is Fitted dat ook (wijzigen kan bij Instellingen → Taal van Fitted).</p>
-<nav class="toc"><strong>Inhoud</strong><ol><li><a href="#nl-1-aan-de-slag">Aan de slag</a></li><li><a href="#nl-2-je-cv-instellen">Je cv instellen</a></li><li><a href="#nl-3-instellingen-ai-talen-licentie">Instellingen: AI, talen, licentie</a></li><li><a href="#nl-4-nieuwe-sollicitatie-new-application">Nieuwe sollicitatie</a></li><li><a href="#nl-5-elke-aangepaste-regel-bevestigen">Elke aangepaste regel bevestigen</a></li><li><a href="#nl-6-je-cv-s-zijn-klaar">Je cv's zijn klaar</a></li><li><a href="#nl-7-sollicitaties-applications">Sollicitaties</a></li><li><a href="#nl-8-mijn-cv-my-cv">Mijn cv</a></li><li><a href="#nl-9-hulp-updates-en-je-licentie">Hulp, updates en je licentie</a></li><li><a href="#nl-10-problemen-oplossen">Problemen oplossen</a></li></ol></nav><h2 id="nl-1-aan-de-slag">1. Aan de slag</h2>
+<nav class="toc"><strong>Inhoud</strong><ol><li><a href="#nl-1-aan-de-slag">Aan de slag</a></li><li><a href="#nl-2-je-cv-instellen">Je cv instellen</a></li><li><a href="#nl-3-instellingen-ai-talen-licentie">Instellingen: AI, talen, licentie</a></li><li><a href="#nl-4-nieuwe-sollicitatie-new-application">Nieuwe sollicitatie</a></li><li><a href="#nl-5-elke-aangepaste-regel-bevestigen">Controleren en bevestigen</a></li><li><a href="#nl-6-je-cv-s-zijn-klaar">Je cv's zijn klaar</a></li><li><a href="#nl-7-sollicitaties-applications">Sollicitaties</a></li><li><a href="#nl-8-mijn-cv-my-cv">Mijn cv</a></li><li><a href="#nl-9-hulp-updates-en-je-licentie">Hulp, updates en je licentie</a></li><li><a href="#nl-10-problemen-oplossen">Problemen oplossen</a></li></ol></nav><h2 id="nl-1-aan-de-slag">1. Aan de slag</h2>
 <p>Download Fitted via getfitted.nl. Je eerste 3 vacatures zijn gratis.</p>
 <div class="tbl"><table>
 <thead>
@@ -547,6 +547,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 </table></div>
 <p>Kies er een, klik op <strong>Sleutel aanvragen</strong>, plak de sleutel en klik op <strong>Verbinden</strong>. Fitted test de sleutel en kiest een geschikt model; dat kun je daarna nog wijzigen.</p>
 <p><strong>Een andere AI gebruiken voor vertalingen en cv-import.</strong> Vink dit aan om een sterkere AI te gebruiken voor het zware werk (je hele cv vertalen en importeren) en een goedkopere of gratis AI voor het schrijven van regels.</p>
+<p><strong>Reserve-AI's.</strong> Vink <strong>Reserve-AI's voor als een AI zijn gratis limiet bereikt</strong> aan en voeg tot twee extra AI's toe, zoals Groq en Google Gemini (allebei gratis). Zit je AI aan zijn limiet of is hij erg druk, dan schakelt Fitted vanzelf over naar de volgende en laat zien welke het werk deed. Heb je nog geen reserve en bereik je een limiet, dan staat in de melding een knop <strong>Gratis reserve-AI toevoegen</strong> die je er meteen heen brengt.</p>
 <p><strong>Cv-talen.</strong> Klik op <strong>Wijzigen</strong> om de talen te kiezen waarin je solliciteert: Engels, Nederlands, Duits, Frans, Spaans, Italiaans, Portugees, Zweeds, Deens en Noors. Je AI vertaalt je cv één keer in elke nieuwe taal; onder My CV controleer en bewerk je elke vertaling.</p>
 <p><strong>Basis-cv.</strong> Je basis-cv is in de taal waarin je hem importeerde of schreef: een Duitse cv blijft Duits. De basis bewerk je onder My CV, de andere talen worden ervan vertaald. Wil je een andere taal als basis, kies hem dan hier (die vertaling moet bijgewerkt zijn). De basistaal kun je niet verwijderen.</p>
 <p><strong>Cv-foto.</strong> Klik op <strong>Foto toevoegen</strong> en kies een JPG of PNG. Fitted zet hem rechtop, snijdt hem bij tot een portretfoto en toont een kleine voorvertoning. Vink onder <strong>Tonen op</strong> de talen aan waarvan de cv de foto toont; Duits staat standaard aan. De foto staat rechtsboven, in elke cv-stijl. Een foto is gebruikelijk in Duitsland, Oostenrijk en Zwitserland; laat hem weg in Nederland, het Verenigd Koninkrijk en de VS. Met <strong>Foto wijzigen</strong> en <strong>Verwijderen</strong> vervang of verwijder je hem.</p>
@@ -563,7 +564,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <ol>
 <li>Plak de link naar de vacature en klik op <strong>Vacature ophalen</strong>. Fitted vult het bedrijf, de functie en de sollicitatielink in. Controleer ze.</li>
 <li>Laadt een site niet? Open <strong>Vacaturetekst</strong> en plak de tekst van de vacature die je in je browser kopieerde.</li>
-<li>Rechtsboven toont <strong>Cv's voor deze vacature</strong> je talen, met de taal van de vacature geselecteerd: een Duitse vacature geeft alleen een Duits cv. Klik op een andere taal om die voor deze vacature toe te voegen.</li>
+<li>Rechtsboven toont <strong>Cv's voor deze vacature</strong> je talen. Je krijgt één cv: in je basistaal, of in de taal van de vacature zodra die geladen is (een Duitse vacature geeft alleen een Duits cv). Klik op een andere taal om die voor deze vacature toe te voegen.</li>
 <li>Solliciteer je via een bureau? Vink onder Bedrijf <strong>Via een recruiter</strong> aan, vul het bureau in, en de werkgever als de vacature die noemt. Fitted vinkt het zelf aan als de vacature "onze opdrachtgever" zegt. In je overzicht staat dan "Holidu (via Hirewise)" of "Hirewise (recruiter)".</li>
 </ol>
 <p>Op Android kun je ook vanuit de vacature zelf beginnen: tik op <strong>Delen</strong> bij een vacature in je browser, LinkedIn of een vacature-app en kies <strong>Fitted</strong>.</p>
@@ -597,23 +598,21 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <p>Bij het maken bevestig je dat de brief klopt (volgend hoofdstuk), en hij wordt als pdf in je cv-stijl naast je cv's bewaard.</p>
 <figure><img src="img/guide/nl/12-letter.jpg" alt="Een voorgestelde sollicitatiebrief, klaar om te controleren" loading="lazy"><figcaption>Een voorgestelde sollicitatiebrief, klaar om te controleren</figcaption></figure>
 <p><strong>Stap 4: Maken</strong></p>
-<p>Klik op <strong>Cv's maken</strong>. Eerst bevestig je elke aangepaste regel (volgend hoofdstuk), daarna maakt Fitted een pdf in elk van je talen en zet de vacature bij Applications.</p>
+<p>Klik op <strong>Cv's maken</strong>. Eerst controleer je alles op één scherm (volgend hoofdstuk), daarna maakt Fitted een pdf in elke taal die je koos en zet de vacature bij Sollicitaties. Daarna heet de knop <strong>Opnieuw maken</strong>.</p>
 <p><strong>Opnieuw beginnen</strong> (rechtsboven) maakt de pagina leeg voor de volgende vacature.</p>
-<h2 id="nl-5-elke-aangepaste-regel-bevestigen">5. Elke aangepaste regel bevestigen</h2>
+<h2 id="nl-5-elke-aangepaste-regel-bevestigen">5. Controleren en bevestigen</h2>
 <p>Er wordt niets gemaakt voordat je elke aangepaste regel hebt bevestigd. Recruiters vragen naar wat er op je cv staat, dus elke regel moet iets zijn waar je over kunt vertellen.</p>
-<figure><img src="img/guide/nl/04-confirm.jpg" alt="Een aangepaste regel bevestigen" loading="lazy"><figcaption>Een aangepaste regel bevestigen</figcaption></figure>
+<figure><img src="img/guide/nl/04-confirm.jpg" alt="Het controlescherm voor het maken" loading="lazy"><figcaption>Eén controlescherm: vink elk onderdeel aan en maak je cv</figcaption></figure>
 
-<p>Voor elke baan met een nieuwe regel zie je:</p>
+<p>Alles wat je moet controleren staat op één scherm, elk onderdeel met een eigen vinkje:</p>
 <ul>
-<li>de eis uit de vacature waar hij op ingaat (geel);</li>
-<li>de nieuwe regel in elke taal;</li>
-<li>de standaardregel die hij vervangt.</li>
+<li>elke baan met een nieuwe regel: de eis uit de vacature waar hij op ingaat (geel), de nieuwe regel, de standaardregel die hij vervangt, en een punt dat wegvalt omdat je regel het al zegt;</li>
+<li>met Pro: herschreven punten (bij de regel van die baan), je nieuwe profiel en je motivatiebrief;</li>
+<li>onderaan de vacaturegegevens en de cv-stijl.</li>
 </ul>
-<p>Met Pro staan herschreven punten in dezelfde stap als de regel van die baan, en laat een aparte stap je nieuwe profiel zien, en nog een je motivatiebrief. Die bevestig je op dezelfde manier.</p>
-<p>Vink <strong>This is true for this role, and I can back it up in an interview</strong> aan (dit klopt en je kunt het in een gesprek onderbouwen) en klik op <strong>Bevestigen en verder</strong>.</p>
+<p>Vink bij elk onderdeel <strong>Dit klopt voor deze functie en ik kan het in een gesprek onderbouwen</strong> aan. <strong>Cv maken</strong> werkt zodra alles is aangevinkt.</p>
 <ul>
-<li><strong>Pas deze regel aan</strong> brengt je terug om de woorden aan te passen.</li>
-<li><strong>Terug</strong> gaat terug naar de vorige baan.</li>
+<li><strong>Pas deze regel aan</strong> (naast elk onderdeel) brengt je terug om de woorden aan te passen.</li>
 <li><strong>Annuleren</strong> stopt zonder iets te maken.</li>
 </ul>
 <p>De laatste stap, <strong>Controleer de vacaturegegevens</strong>, toont bedrijf, functie, sollicitatielink, talen en welke versie je verstuurt. Vink aan dat het klopt en klik op <strong>Maken</strong>.</p>
@@ -680,6 +679,7 @@ blockquote p{margin:0} h3{font:700 20px/1.2 var(--display);margin:24px 0 6px} .t
 <p>My CV is de basis van elke cv die je maakt. Afgestemde regels gebruiken alleen wat hier staat, dus houd het compleet en waar.</p>
 <figure><img src="img/guide/nl/07-mycv.jpg" alt="De cv-editor" loading="lazy"><figcaption>De cv-editor</figcaption></figure>
 
+<p><strong>Herhalingen zoeken.</strong> Klik bovenaan op <strong>Herhalingen zoeken</strong> om punten bij dezelfde baan te zien die hetzelfde zeggen. Per paar kies je: een van de twee verwijderen, of allebei houden. Er verandert niets tot je kiest, en je slaat op zoals altijd.</p>
 <p><strong>Taaltabbladen.</strong> Je basistaal en elke extra taal hebben een eigen tabblad. Sla je een wijziging in de basisversie op, dan vertaalt Fitted alleen die wijziging meteen in je andere talen; telefoonnummers, e-mail en links worden gewoon overgenomen, en aanpassingen die je zelf in een andere taal deed blijven staan. Lukt dat niet (geen AI gekoppeld, of de limiet is bereikt), dan krijgt de taal een oranje stip en een knop <strong>Vertaling bijwerken</strong>. Elk taaltabblad heeft ook <strong>Opnieuw vertalen vanuit ...</strong> voor een vertaling die niet meer klopt. Vertalingen kun je ook zelf bewerken.</p>
 <p><strong>Onderdelen</strong></p>
 <ul>
