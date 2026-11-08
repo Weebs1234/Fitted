@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <defs>
+    <style>
+      .fitted-text { fill: #fff; font-family: Arial, 'Segoe UI', sans-serif; font-weight: bold; font-size: 32px; letter-spacing: 2px; }
+      .cv-text { fill: #FFD700; font-family: Arial, 'Segoe UI', sans-serif; font-weight: bold; font-size: 32px; letter-spacing: 2px; }
+      .separator { fill: #fff; }
+      .icon-bg { fill: #fff; }
+      .icon-line { fill: #FFD700; }
+    </style>
+  </defs>
+  
+  <!-- Icon: Document with yellow line -->
+  <rect x="0" y="20" width="50" height="50" rx="8" class="icon-bg"/>
+  <rect x="10" y="35" width="30" height="20" rx="2" class="icon-line"/>
+  <path d="M15 35 L15 55 L35 55 L35 35 Z" class="icon-line"/>
+  
+  <!-- Text: FITTED | CV -->
+  <text x="65" y="55" class="fitted-text">FITTED</text>
+  <line x1="155" y1="30" x2="155" y2="70" stroke="#fff" stroke-width="3" class="separator"/>
+  <text x="175" y="55" class="cv-text">CV</text>
+</svg>
