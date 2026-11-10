@@ -16,23 +16,23 @@
 @font-face{font-family:"Barlow SC";src:url("fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
 /* Layout: a stitched "label" hero (sign-up first), then proof, the three real steps with app shots, the five CV styles on paper, editions, and a second sign-up. */
 :root{
-  --fog:#e9eef0; --paper:#ffffff; --sunk:#f4f7f8; --line:#d3dde1;
-  --ink:#142029; --ink-2:#44555f; --ink-3:#66767f;
-  --petrol:#1e5a7d; --deep:#123a52; --stitch:#5f9cbd; --amber:#e8a33d; --amber-ink:#8a5a12; --amber-soft:#fbefd9;
+  --fog:#f1f2f4; --paper:#ffffff; --sunk:#f6f7f8; --line:#e0e3e7;
+  --ink:#15171c; --ink-2:#4b5059; --ink-3:#7b818b;
+  --petrol:#15171c; --deep:#15171c; --stitch:#7b818b; --amber:#ffd60a; --amber-ink:#15171c; --amber-soft:#fff3b0;
   --ok:#2f7d5b; --ok-soft:#dcefe5; --err:#b4483c;
   --display:"Barlow SC","Bahnschrift","DIN Alternate","Arial Narrow",sans-serif;
   --text:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-  --shadow:0 18px 40px -18px rgba(18,58,82,.35);
+  --shadow:0 18px 40px -18px rgba(21,23,28,.25);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --fog:#0e171d; --paper:#15232c; --sunk:#1b2c36; --line:#2a3f4b;
-  --ink:#e4edf1; --ink-2:#b0c2cb; --ink-3:#8399a5;
-  --petrol:#5aa6cf; --deep:#0b2433; --stitch:#3f6f8c; --amber:#f0b457; --amber-ink:#f0b457; --amber-soft:#3a2f1b;
+  --fog:#0f1012; --paper:#191b1f; --sunk:#202328; --line:#2c3036;
+  --ink:#eef0f2; --ink-2:#b4b9c0; --ink-3:#858b94;
+  --petrol:#eef0f2; --deep:#0a0b0d; --stitch:#5a606a; --amber:#ffd60a; --amber-ink:#ffd60a; --amber-soft:rgba(255,214,10,.18);
   --ok:#4fb085; --ok-soft:#183429; --err:#e07a6e; --shadow:0 18px 40px -18px rgba(0,0,0,.6); color-scheme:dark}}
 :root[data-theme="dark"]{
-  --fog:#0e171d; --paper:#15232c; --sunk:#1b2c36; --line:#2a3f4b;
-  --ink:#e4edf1; --ink-2:#b0c2cb; --ink-3:#8399a5;
-  --petrol:#5aa6cf; --deep:#0b2433; --stitch:#3f6f8c; --amber:#f0b457; --amber-ink:#f0b457; --amber-soft:#3a2f1b;
+  --fog:#0f1012; --paper:#191b1f; --sunk:#202328; --line:#2c3036;
+  --ink:#eef0f2; --ink-2:#b4b9c0; --ink-3:#858b94;
+  --petrol:#eef0f2; --deep:#0a0b0d; --stitch:#5a606a; --amber:#ffd60a; --amber-ink:#ffd60a; --amber-soft:rgba(255,214,10,.18);
   --ok:#4fb085; --ok-soft:#183429; --err:#e07a6e; --shadow:0 18px 40px -18px rgba(0,0,0,.6); color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -61,7 +61,7 @@ header .wrap{display:flex;align-items:center;gap:16px;padding-block:22px}
 .hero::before{content:"";position:absolute;inset:14px;border:2px dashed var(--stitch);border-radius:20px;pointer-events:none;z-index:-1}
 .hero-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;padding:56px 56px 0}
 .soon{display:inline-flex;align-items:center;gap:10px;font:600 15px var(--display);letter-spacing:.12em;text-transform:uppercase;color:#f6d8a6;margin:0 0 14px}
-.soon::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px rgba(232,163,61,.25);animation:pulse 2.4s ease-in-out infinite}
+.soon::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px rgba(255,214,10,.3);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 9px rgba(232,163,61,.05)}}
 .hero h1{font-size:clamp(44px,6.4vw,82px);line-height:.95;font-weight:700;letter-spacing:-.3px;max-width:12ch}
 .hero h1 em{font-style:normal;color:var(--amber)}
