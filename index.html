@@ -151,6 +151,69 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
   .closing{padding:24px}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* =========================================================================================
+   Calm (Nov 2026): the site matches the app. Light desk, soft white panels, pill buttons,
+   one highlighter yellow, a real screenshot of the app as the hero. Less text above the fold.
+   ========================================================================================= */
+:root{--display:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;--fog:#eef0f4;--line:#e3e6ec;
+  --soft:0 1px 2px rgba(21,23,28,.04),0 8px 28px rgba(21,23,28,.07);--lift:0 2px 4px rgba(21,23,28,.05),0 30px 70px -20px rgba(21,23,28,.28)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fog:#101216;--paper:#1a1d22;--sunk:#22262c;--line:#2c3138;--amber-ink:#15171c;
+  --soft:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);--lift:0 30px 70px -20px rgba(0,0,0,.7)}}
+:root[data-theme="dark"]{--fog:#101216;--paper:#1a1d22;--sunk:#22262c;--line:#2c3138;--amber-ink:#15171c;--soft:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);--lift:0 30px 70px -20px rgba(0,0,0,.7)}
+h1,h2,h3{font-family:var(--display);font-weight:750;letter-spacing:-.02em}
+.eyebrow,.step .n{font:600 13px var(--text);letter-spacing:.02em;text-transform:none;color:var(--ink-3)}
+.btn{font:650 16px var(--text);letter-spacing:0;border-radius:999px;padding:13px 24px;color:#15171c}
+.lang{border:0;box-shadow:var(--soft);border-radius:999px}
+.lang button{font:600 13px var(--text);border-radius:999px}
+
+/* hero: no dark sewn label; a calm headline and the app itself */
+.hero{background:transparent;color:var(--ink);border-radius:0;overflow:visible}
+.hero::before{display:none}
+.hero-in{grid-template-columns:1fr;gap:0;padding:56px 0 0;text-align:center;justify-items:center}
+.soon{color:var(--ink-2);font:600 14px var(--text);letter-spacing:0;text-transform:none;background:var(--paper);box-shadow:var(--soft);padding:6px 14px 6px 12px;border-radius:999px}
+.hero h1{font-size:clamp(42px,6vw,76px);line-height:1.02;max-width:16ch;margin-inline:auto;letter-spacing:-.035em}
+.hero h1 em{color:inherit;background:linear-gradient(transparent 58%,var(--amber) 58%, var(--amber) 90%,transparent 90%);padding:0 .08em}
+.hero .lead{color:var(--ink-2);max-width:54ch;margin:20px auto 28px}
+.getit{justify-content:center;flex-direction:column;gap:12px}
+.getsd{color:var(--ink-3)}
+.plat{justify-content:center;margin:0 0 6px}
+.plat li{font:600 13px var(--text);letter-spacing:0;border:0;background:var(--paper);box-shadow:var(--soft);color:var(--ink-2)}
+.later{margin:0 0 44px;font-size:15px}.later a{color:var(--ink-2);text-decoration:none;border-bottom:1.5px solid var(--amber)}
+.later a:hover{color:var(--ink)}
+.hero-shot{width:100%;max-width:1100px;border-radius:22px;overflow:hidden;box-shadow:var(--lift);background:var(--paper);
+  -webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.hero-shot img{width:100%}
+
+/* proof: one quiet line, not a giant number */
+.proof{padding-block:40px 8px;justify-content:center;grid-template-columns:auto minmax(0,560px)}
+.big{font:750 clamp(48px,6vw,72px)/.95 var(--display);letter-spacing:-.04em}
+.big small{font:600 15px var(--text);color:var(--ink-3)}
+.proof p{font-size:18px}
+
+/* steps: big, cropped app shots in soft panels */
+section.block{padding-block:64px}
+.head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.05}
+.steps{gap:56px}
+.step h3{font-size:26px;font-weight:700}
+.step .n{display:inline-block;background:var(--paper);box-shadow:var(--soft);border-radius:999px;padding:3px 12px}
+.shot{border:0;border-radius:22px;box-shadow:var(--lift)}
+
+/* styles + editions + closing: soft panels, no outlines */
+.style .paper{border-radius:12px;box-shadow:var(--soft)}
+.style figcaption{font:650 15px var(--text)}
+.ed{border:0;border-radius:24px;box-shadow:var(--soft);padding:28px}
+.ed.pro{border:0;box-shadow:var(--soft),inset 0 0 0 2px var(--amber)}
+.ed h3{font-size:22px}
+.price{font:750 32px var(--display);letter-spacing:-.03em}
+.closing{border:0;border-radius:28px;box-shadow:var(--soft);padding:44px}
+.closing .signup{border:0;background:var(--sunk);box-shadow:none;border-radius:20px}
+.stitchrule{border-top:4px solid var(--amber);border-radius:4px;width:56px}
+.row input[type=email]{border-radius:999px;border-color:transparent;padding:12px 18px}
+.row input[type=email]:focus{border-color:var(--ink)}
+.consent input{accent-color:var(--ink)}
+@media (max-width:900px){.hero-in{padding:36px 0 0}.proof{grid-template-columns:1fr;text-align:center}}
+@media (max-width:560px){.hero-shot{border-radius:14px}.later{margin-bottom:28px}}
 </style>
 </head>
 <body>
@@ -172,7 +235,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
         <p class="lead" data-l="nl">Plak een vacature. Fitted CV herschrijft de regels die recruiters als eerste lezen zodat ze aansluiten, alleen met wat je echt gedaan hebt, en maakt een verzendklare pdf in het Nederlands, Engels of acht andere talen.</p>
         <p class="getit"><a class="btn store" href="https://apps.microsoft.com/detail/9N3J1XHVJQ75" rel="noopener"><span data-l="en">Get it from the Microsoft Store</span><span data-l="nl">Download in de Microsoft Store</span></a><span class="getsd"><span data-l="en">Free to install. Your first 3 jobs free, with every Pro feature.</span><span data-l="nl">Gratis te installeren. Je eerste 3 vacatures gratis, met alle Pro-functies.</span></span></p>
         <ul class="plat" aria-label="Platforms"><li>Windows</li><li><span data-l="en">Mac: soon</span><span data-l="nl">Mac: binnenkort</span></li><li><span data-l="en">Android: soon</span><span data-l="nl">Android: binnenkort</span></li></ul>
-        <form class="signup" id="signup1" novalidate>
+        <p class="later"><a href="#close"><span data-l="en">On a Mac or Android? Get one email when it's out</span><span data-l="nl">Op een Mac of Android? Krijg één mail zodra het er is</span> →</a></p>
+        <form class="signup" id="signup1" novalidate hidden>
           <h2><span data-l="en">On a Mac or Android?</span><span data-l="nl">Op een Mac of Android?</span></h2>
           <p class="sd" data-l="en">One email when Fitted CV is out for Mac and Android. Nothing else.</p>
           <p class="sd" data-l="nl">Eén e-mail zodra Fitted CV er is voor Mac en Android. Verder niets.</p>
@@ -185,7 +249,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
           <p class="msg" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
-      <div class="phone"><img src="img/phone-tailor.webp" alt="Fitted CV on a phone: a drafted line that matches the ad, in English and Dutch" width="390" height="600"></div>
+      <div class="hero-shot"><img src="img/v2/hero.webp" alt="Fitted CV on Windows: the job ad on the left, a drafted line that matches it on the right" width="1600" height="1109"></div>
     </div>
   </section>
 
@@ -211,21 +275,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
         <h3><span data-l="en">Paste the ad, draft the lines</span><span data-l="nl">Plak de vacature, laat de regels opstellen</span></h3>
         <p data-l="en">Fitted reads the ad and drafts one line per job that matches a real requirement, from facts already on your CV, in each of your languages.</p>
         <p data-l="nl">Fitted leest de vacature en stelt per baan één regel op die past bij een echte eis, met feiten die al op je cv staan, in elk van je talen.</p></div>
-      <div class="shot"><img src="img/desktop-tailor.webp" alt="Drafted lines for each job, with the requirement each one matches" width="1600" height="1025"></div>
+      <div class="shot"><img src="img/v2/step-tailor.webp" alt="Drafted lines for each job, with the requirement each one matches" width="1200" height="1076" loading="lazy"></div>
     </article>
     <article class="step">
       <div><span class="n"><span data-l="en">Step 2</span><span data-l="nl">Stap 2</span></span>
         <h3><span data-l="en">Confirm every change</span><span data-l="nl">Bevestig elke wijziging</span></h3>
         <p data-l="en">Nothing goes on your CV until you've ticked that it's true and you can back it up in an interview.</p>
         <p data-l="nl">Er komt niets op je cv tot jij hebt aangevinkt dat het klopt en dat je het in een gesprek kunt onderbouwen.</p></div>
-      <div class="shot"><img src="img/desktop-confirm.webp" alt="Confirming a changed line before the CV is made" width="1600" height="1025"></div>
+      <div class="shot"><img src="img/v2/step-confirm.webp" alt="Confirming a changed line before the CV is made" width="1200" height="1189" loading="lazy"></div>
     </article>
     <article class="step">
       <div><span class="n"><span data-l="en">Step 3</span><span data-l="nl">Stap 3</span></span>
         <h3><span data-l="en">Pick a style, get your PDFs</span><span data-l="nl">Kies een stijl, ontvang je pdf's</span></h3>
         <p data-l="en">Choose one of five CV styles. You get a PDF per language, and the job is added to your applications list.</p>
         <p data-l="nl">Kies een van vijf cv-stijlen. Je krijgt per taal een pdf, en de vacature komt in je sollicitatieoverzicht.</p></div>
-      <div class="shot"><img src="img/desktop-styles.webp" alt="Choosing a CV style on the last step" width="1600" height="1025"></div>
+      <div class="shot"><img src="img/v2/step-styles.webp" alt="Choosing a CV style on the last step" width="1200" height="1328" loading="lazy"></div>
     </article>
   </div>
 </div></section>
