@@ -9,10 +9,10 @@ ROOT = Path(__file__).resolve().parent.parent
 BLOG = ROOT / 'blog'
 T = {'nl': {'blog': 'Blog', 'home': 'Home', 'guide': 'Handleiding', 'new': 'Wat is er nieuw', 'privacy': 'Privacyverklaring',
             'read': 'Lees verder', 'other': 'Read in English', 'back': 'Alle artikelen', 'months': ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'],
-            'cta': 'Fitted CV stemt je cv in een paar minuten af op elke vacature, alleen met wat je echt gedaan hebt.', 'ctab': 'Bekijk Fitted CV'},
+            'cta': 'Fitted CV stemt je cv in een paar minuten af op elke vacature, alleen met wat je echt gedaan hebt.', 'ctab': 'Bekijk Fitted CV', 'get': 'Gratis downloaden'},
      'en': {'blog': 'Blog', 'home': 'Home', 'guide': 'User guide', 'new': "What's new", 'privacy': 'Privacy policy',
             'read': 'Read more', 'other': 'Lees in het Nederlands', 'back': 'All articles', 'months': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            'cta': 'Fitted CV tailors your CV to every job ad in a few minutes, using only what you really did.', 'ctab': 'See Fitted CV'}}
+            'cta': 'Fitted CV tailors your CV to every job ad in a few minutes, using only what you really did.', 'ctab': 'See Fitted CV', 'get': 'Get it free'}}
 
 HEAD_CSS = (ROOT / 'guide.html').read_text(encoding='utf-8').split('<style>', 1)[1].split('</style>', 1)[0]
 HEAD_CSS = HEAD_CSS.replace('url("fonts/', 'url("../fonts/')
@@ -75,10 +75,12 @@ def page(lang, title, desc, url, body, extra_head='', alt=None):
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 {extra_head}<style>{HEAD_CSS}{EXTRA_CSS}</style>
+<link rel="stylesheet" href="../calm.css">
 </head>
 <body>
 <header><div class="wrap">
   <a href="../index.html" aria-label="Fitted CV home"><img class="logo dark" src="../img/logo.svg" alt="Fitted CV" width="180" height="32"><img class="logo white" src="../img/logo-white.svg" alt="Fitted CV" width="180" height="32"></a>
+  <nav class="topnav" aria-label="Site"><a href="../guide.html">{T[lang]['guide']}</a><a href="index.html" aria-current="page">{T[lang]['blog']}</a><a class="get" href="https://apps.microsoft.com/detail/9N3J1XHVJQ75" rel="noopener">{T[lang]['get']}</a></nav>
 </div></header>
 <main><div class="wrap">
 {body}

@@ -1,0 +1,43 @@
+/* Fitted CV site: shared look for every page (home, guide, blog, what's new, legal).
+   One readable typeface, soft panels, a simple top bar with the three places people look for. */
+@font-face{font-family:"Atkinson Next";font-style:normal;font-display:swap;font-weight:200 800;
+  src:url("fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2") format("woff2-variations"),url("fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2") format("woff2");
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Atkinson Next";font-style:normal;font-display:swap;font-weight:200 800;
+  src:url("fonts/atkinson-hyperlegible-next-latin-ext-wght-normal.woff2") format("woff2-variations"),url("fonts/atkinson-hyperlegible-next-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+20A0-20AB,U+20AD-20C0,U+2C60-2C7F,U+A720-A7FF}
+:root{--display:"Atkinson Next","Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,sans-serif;
+  --text:"Atkinson Next","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  --fog:#eef0f4;--line:#e3e6ec;--soft:0 1px 2px rgba(21,23,28,.04),0 8px 28px rgba(21,23,28,.07);color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fog:#101216;--paper:#1a1d22;--sunk:#22262c;--line:#2c3138;--amber-ink:#15171c;
+  --soft:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);color-scheme:dark}}
+body{font-family:var(--text)}
+h1,h2,h3{font-family:var(--display);font-weight:750;letter-spacing:-.02em}
+th{font-family:var(--text)}
+
+/* top bar: logo, Guide, Blog, the Store button, language */
+header .wrap{gap:10px}
+.topnav{display:flex;align-items:center;gap:4px;margin-left:auto}
+.topnav a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:15px;padding:8px 14px;border-radius:999px}
+.topnav a:hover{background:var(--paper);color:var(--ink)}
+.topnav a[aria-current="page"]{background:var(--paper);color:var(--ink);box-shadow:var(--soft)}
+.topnav a.get{background:var(--amber);color:#15171c;margin-left:6px}
+.topnav a.get:hover{filter:brightness(.97)}
+.topnav+.lang{margin-left:6px}
+.lang{border:0;box-shadow:var(--soft);border-radius:999px}
+.lang button{font:600 13px var(--text);border-radius:999px}
+@media (max-width:640px){.topnav a:not(.get){display:none}.topnav a.get{padding:7px 12px;font-size:14px}}
+
+/* reading pages: one soft sheet, a comfortable line length */
+body:not(.home) main .wrap{border:0;border-radius:28px;box-shadow:var(--soft)}
+body:not(.home) main .wrap>*:not(figure):not(.tbl):not(table){max-width:68ch}
+body:not(.home) h1{font-size:clamp(32px,4.4vw,46px);line-height:1.05;letter-spacing:-.03em}
+body:not(.home) h2{font-size:25px;line-height:1.15;margin-top:38px}
+body:not(.home) h3{font-size:19px}
+.toc{border:0;background:var(--fog);border-radius:18px}
+figure img{border:0;border-radius:16px;box-shadow:var(--soft)}
+blockquote{border-radius:16px}
+.cta{border-radius:20px}
+.cta a,.cta .btn{display:inline-block;background:var(--amber);color:#15171c;border-radius:999px;padding:10px 20px;font-weight:650;text-decoration:none}
+.posts li{border-top:1px solid var(--line)}
+footer .wrap{padding-top:8px}
