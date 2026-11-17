@@ -92,7 +92,10 @@ def page(lang, title, desc, url, body, extra_head='', alt=None):
 </html>
 """
 
-posts = sorted((parse(p) for p in (BLOG / '_posts').glob('*.md')), key=lambda m: (m['date'], m['slug']), reverse=True)
+TODAY = datetime.date.today().isoformat()
+# Scheduled posts: a post with a date in the future is skipped until a build on or after that date.
+posts = sorted((m for m in (parse(p) for p in (BLOG / '_posts').glob('*.md')) if m['date'] <= TODAY),
+               key=lambda m: (m['date'], m['slug']), reverse=True)
 by_slug = {m['slug']: m for m in posts}
 for m in posts:
     lang, t = m['lang'], T[m['lang']]
