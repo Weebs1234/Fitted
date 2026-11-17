@@ -81,7 +81,7 @@ def page(lang, title, desc, url, body, extra_head='', alt=None):
 </head>
 <body>
 <header><div class="wrap">
-  <a href="../index.html" aria-label="Fitted CV home"><img class="logo dark" src="../img/logo.svg" alt="Fitted CV" width="180" height="32"><img class="logo white" src="../img/logo-white.svg" alt="Fitted CV" width="180" height="32"></a>
+  <a href="../index.html" aria-label="Fitted CV home"><img class="logo dark" src="../img/logo.svg" alt="Fitted CV" width="131" height="32"><img class="logo white" src="../img/logo-white.svg" alt="Fitted CV" width="131" height="32"></a>
   <nav class="topnav" aria-label="Site"><a href="../guide.html">{T[lang]['guide']}</a><a href="index.html" aria-current="page">{T[lang]['blog']}</a><a class="get" href="https://apps.microsoft.com/detail/9N3J1XHVJQ75" rel="noopener">{T[lang]['get']}</a></nav>
 </div></header>
 <main><div class="wrap">

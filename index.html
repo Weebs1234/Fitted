@@ -216,14 +216,26 @@ section.block{padding-block:64px}
 .consent input{accent-color:var(--ink)}
 @media (max-width:900px){.hero-in{padding:36px 0 0}.proof{grid-template-columns:1fr;text-align:center}}
 @media (max-width:560px){.hero-shot{border-radius:14px}.later{margin-bottom:28px}}
+
+/* trust cards and questions */
+.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tcard{background:var(--paper);border-radius:24px;box-shadow:var(--soft);padding:26px}
+.tcard h3{font-size:20px;margin-bottom:8px}.tcard p{margin:0;color:var(--ink-2)}
+.qa{max-width:780px}
+.qa details{background:var(--paper);border-radius:18px;box-shadow:var(--soft);margin-bottom:10px;padding:0 22px}
+.qa summary{cursor:pointer;font-weight:700;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.qa summary::after{content:"+";font-weight:400;font-size:22px;line-height:1;color:var(--ink-3)}
+.qa details[open] summary::after{content:"\2212"}
+.qa details p{margin:0 0 18px;color:var(--ink-2)}
+@media (max-width:900px){.trust{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="calm.css">
 </head>
 <body class="home">
 
 <header><div class="wrap">
-  <img class="logo dark" src="img/logo.svg" alt="Fitted CV" width="190" height="34">
-  <img class="logo white" src="img/logo-white.svg" alt="Fitted CV" width="190" height="34">
+  <img class="logo dark" src="img/logo.svg" alt="Fitted CV" width="139" height="34">
+  <img class="logo white" src="img/logo-white.svg" alt="Fitted CV" width="139" height="34">
   <nav class="topnav" aria-label="Site"><a href="guide.html"><span data-l="en">User guide</span><span data-l="nl">Handleiding</span></a><a href="blog/index.html"><span data-l="en">Blog</span><span data-l="nl">Blog</span></a><a class="get" href="https://apps.microsoft.com/detail/9N3J1XHVJQ75" rel="noopener"><span data-l="en">Get it free</span><span data-l="nl">Gratis downloaden</span></a></nav>
   <div class="lang" role="group" aria-label="Language / Taal"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="nl" aria-pressed="false">NL</button></div>
 </div></header>
@@ -311,7 +323,7 @@ section.block{padding-block:64px}
         <p data-l="nl">Een bijbaan, een stage, vrijwilligerswerk, een schoolproject, zorgen voor familie, een sportclub. Fitted vraagt wat je deed op een gewone dag en wat er goed ging, en maakt van je antwoorden een cv. Alleen wat jij zei, en jij controleert elke regel.</p>
         <p data-l="en">New to AI? Pick the free option: no account, no key, nothing to set up.</p>
         <p data-l="nl">Nieuw met AI? Kies de gratis optie: geen account, geen sleutel, niets in te stellen.</p></div>
-      <div class="shot"><img data-l="en" src="img/desktop-first-cv.webp" alt="Writing a first CV: questions on the left, the CV growing on the right" width="1600" height="1025" loading="lazy"><img data-l="nl" src="img/desktop-first-cv-nl.webp" alt="Een eerste cv schrijven: links de vragen, rechts groeit het cv" width="1600" height="1025" loading="lazy"></div>
+      <div class="shot"><img data-l="en" src="img/v2/first-cv.webp" alt="Writing a first CV: questions on the left, the CV growing on the right" width="1200" height="888" loading="lazy"><img data-l="nl" src="img/desktop-first-cv-nl.webp" alt="Een eerste cv schrijven: links de vragen, rechts groeit het cv" width="1600" height="1025" loading="lazy"></div>
     </article>
   </div>
 </div></section>
@@ -327,6 +339,48 @@ section.block{padding-block:64px}
     <div class="style"><figure><div class="paper"><img src="img/style-elegant.webp" alt="Elegant CV style" width="640" height="704"></div><figcaption>Elegant<span data-l="en">Serif, burgundy</span><span data-l="nl">Schreef, bordeaux</span></figcaption></figure></div>
     <div class="style"><figure><div class="paper"><img src="img/style-minimal.webp" alt="Minimal CV style" width="640" height="704"></div><figcaption>Minimal<span data-l="en">Black and grey</span><span data-l="nl">Zwart en grijs</span></figcaption></figure></div>
     <div class="style"><figure><div class="paper"><img src="img/style-bold.webp" alt="Bold CV style" width="640" height="704"></div><figcaption>Bold<span data-l="en">Large name, amber</span><span data-l="nl">Grote naam, amber</span></figcaption></figure></div>
+  </div>
+</div></section>
+
+<section class="block" aria-labelledby="safe"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow"><span data-l="en">Your data</span><span data-l="nl">Jouw gegevens</span></p>
+    <h2 id="safe"><span data-l="en">Your CV stays yours</span><span data-l="nl">Je cv blijft van jou</span></h2>
+  </div>
+  <div class="trust">
+    <div class="tcard"><h3><span data-l="en">On your computer</span><span data-l="nl">Op je eigen computer</span></h3>
+      <p data-l="en">Your CV, PDFs and applications are files in one folder you own. We never receive them. Want them in Google Drive, OneDrive, iCloud or Dropbox? One setting.</p>
+      <p data-l="nl">Je cv, pdf's en sollicitaties zijn bestanden in één map van jou. Wij ontvangen ze nooit. Liever in Google Drive, OneDrive, iCloud of Dropbox? Eén instelling.</p></div>
+    <div class="tcard"><h3><span data-l="en">You choose the AI</span><span data-l="nl">Jij kiest de AI</span></h3>
+      <p data-l="en">Start free without a key, use your own Claude, Gemini or Groq key, or run a local AI so nothing leaves your PC. The app tells you plainly where your text goes.</p>
+      <p data-l="nl">Begin gratis zonder sleutel, gebruik je eigen sleutel van Claude, Gemini of Groq, of draai een lokale AI zodat er niets je pc verlaat. De app zegt eerlijk waar je tekst heen gaat.</p></div>
+    <div class="tcard"><h3><span data-l="en">Nothing made up</span><span data-l="nl">Niets verzonnen</span></h3>
+      <p data-l="en">Every line comes from facts already on your CV, and nothing goes on it until you tick that it's true. You can defend every word in an interview.</p>
+      <p data-l="nl">Elke regel komt uit feiten die al op je cv staan, en er komt niets op tot jij aanvinkt dat het klopt. Je kunt elk woord in een gesprek onderbouwen.</p></div>
+  </div>
+</div></section>
+
+<section class="block" aria-labelledby="faq"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow"><span data-l="en">Questions</span><span data-l="nl">Vragen</span></p>
+    <h2 id="faq"><span data-l="en">Before you download</span><span data-l="nl">Voordat je downloadt</span></h2>
+  </div>
+  <div class="qa">
+    <details><summary><span data-l="en">Is it really free to try?</span><span data-l="nl">Is proberen echt gratis?</span></summary>
+      <p data-l="en">Yes. Install it free from the Microsoft Store and make CVs for your first 3 jobs with every Pro feature. After that you buy once; there's no subscription.</p>
+      <p data-l="nl">Ja. Installeer het gratis uit de Microsoft Store en maak cv's voor je eerste 3 vacatures, met alle Pro-functies. Daarna betaal je één keer; er is geen abonnement.</p></details>
+    <details><summary><span data-l="en">Do I need an AI account?</span><span data-l="nl">Heb ik een AI-account nodig?</span></summary>
+      <p data-l="en">No. The free option works without an account or key. For more speed and privacy you can add your own key or a local AI later, in two clicks.</p>
+      <p data-l="nl">Nee. De gratis optie werkt zonder account of sleutel. Voor meer snelheid en privacy voeg je later in twee klikken je eigen sleutel of een lokale AI toe.</p></details>
+    <details><summary><span data-l="en">Will recruiters see it was written by AI?</span><span data-l="nl">Zien recruiters dat het door AI is geschreven?</span></summary>
+      <p data-l="en">Fitted changes one line per job and only with your own facts, so your CV still sounds like you. You read and confirm every change before the PDF is made.</p>
+      <p data-l="nl">Fitted verandert één regel per baan en alleen met je eigen feiten, dus je cv klinkt nog steeds als jij. Je leest en bevestigt elke wijziging voordat de pdf wordt gemaakt.</p></details>
+    <details><summary><span data-l="en">Which languages?</span><span data-l="nl">Welke talen?</span></summary>
+      <p data-l="en">English, Dutch, German, French, Spanish, Italian, Portuguese, Swedish, Danish and Norwegian. One base CV; the other languages are translated from it.</p>
+      <p data-l="nl">Engels, Nederlands, Duits, Frans, Spaans, Italiaans, Portugees, Zweeds, Deens en Noors. Eén basis-cv; de andere talen worden daaruit vertaald.</p></details>
+    <details><summary><span data-l="en">What about Mac and Android?</span><span data-l="nl">En Mac en Android?</span></summary>
+      <p data-l="en">They're coming. Leave your email at the bottom of this page and you'll get one email on the day they're out.</p>
+      <p data-l="nl">Die komen eraan. Laat onderaan deze pagina je e-mailadres achter, dan krijg je één mail op de dag dat ze er zijn.</p></details>
   </div>
 </div></section>
 
