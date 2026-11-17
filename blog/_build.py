@@ -62,6 +62,8 @@ def page(lang, title, desc, url, body, extra_head='', alt=None):
 <head>
 <script>if(location.protocol==="http:"&&/(^|\\.)getfitted\\.nl$/.test(location.hostname))location.replace("https://getfitted.nl"+location.pathname+location.search+location.hash)</script>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://assets.mailerlite.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
