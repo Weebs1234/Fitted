@@ -77,7 +77,7 @@ def page(lang, title, desc, url, body, extra_head='', alt=None):
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 {extra_head}<style>{HEAD_CSS}{EXTRA_CSS}</style>
-<link rel="stylesheet" href="../calm.css">
+<link rel="stylesheet" href="../calm.css?v=1.27.1">
 </head>
 <body>
 <header><div class="wrap">
