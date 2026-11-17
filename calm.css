@@ -41,3 +41,12 @@ blockquote{border-radius:16px}
 .cta a,.cta .btn{display:inline-block;background:var(--amber);color:#15171c;border-radius:999px;padding:10px 20px;font-weight:650;text-decoration:none}
 .posts li{border-top:1px solid var(--line)}
 footer .wrap{padding-top:8px}
+
+/* readable greys (WCAG AA 4.5:1) and dark-mode fixes found by the accessibility check */
+:root{--ink-3:#5d636d}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink-3:#9aa1aa;--amber-ink:#ffd60a}
+  :root:not([data-theme="light"]) .dl{background:var(--ink);color:var(--fog)}}
+:root[data-theme="dark"]{--ink-3:#9aa1aa;--amber-ink:#ffd60a}
+:root[data-theme="dark"] .dl{background:var(--ink);color:var(--fog)}
+.btn,.topnav a.get,.cta a{color:#15171c}
+@media (max-width:440px){header .wrap{gap:6px}.logo{height:24px}.topnav a.get{padding:6px 10px;font-size:13px;margin-left:0}.lang button{padding:3px 8px}}
