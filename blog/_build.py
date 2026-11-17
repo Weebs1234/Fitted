@@ -94,9 +94,11 @@ def page(lang, title, desc, url, body, extra_head='', alt=None):
 
 import os
 TODAY = os.environ.get('FITTED_BLOG_DATE') or datetime.date.today().isoformat()  # set to build a future week's upload
-# Scheduled posts: a post with a date in the future is skipped until a build on or after that date.
-posts = sorted((m for m in (parse(p) for p in (BLOG / '_posts').glob('*.md')) if m['date'] <= TODAY),
-               key=lambda m: (m['date'], m['slug']), reverse=True)
+# Scheduled posts: every post gets its page now, so one upload covers the coming weeks. A post dated in the
+# future is left out of the sitemap, and the blog list keeps it in a <template> that a small script shows
+# from its date on (in the visitor's browser). Until then nothing links to it.
+posts = sorted((parse(p) for p in (BLOG / '_posts').glob('*.md')), key=lambda m: (m['date'], m['slug']), reverse=True)
+live = [m for m in posts if m['date'] <= TODAY]
 by_slug = {m['slug']: m for m in posts}
 for m in posts:
     lang, t = m['lang'], T[m['lang']]
@@ -126,8 +128,11 @@ for m in posts:
     (BLOG / f"{m['slug']}.html").write_text(page(lang, m['title'] + ' | Fitted CV', m['description'], url, body, head, alt), encoding='utf-8')
 
 def items(lang):
-    return '\n'.join(f"""<li><h2><a href="{m['slug']}.html">{esc(m['title'])}</a></h2>
-<p>{esc(m['description'])}</p><p class="meta">{nice_date(m['date'], lang)} · <a href="{m['slug']}.html">{T[lang]['read']}</a></p></li>""" for m in posts if m['lang'] == lang)
+    def li(m):
+        h = f"""<li><h2><a href="{m['slug']}.html">{esc(m['title'])}</a></h2>
+<p>{esc(m['description'])}</p><p class="meta">{nice_date(m['date'], lang)} · <a href="{m['slug']}.html">{T[lang]['read']}</a></p></li>"""
+        return h if m['date'] <= TODAY else f'<template data-date="{m["date"]}">{h}</template>'
+    return '\n'.join(li(m) for m in posts if m['lang'] == lang)
 
 idx_body = f"""<div data-l="nl"><h1>Blog</h1>
 <p class="lead">Praktische tips om je cv af te stemmen op elke vacature, een goede motivatiebrief te schrijven en je sollicitaties bij te houden.</p>
@@ -142,7 +147,9 @@ idx = idx.replace('<meta property="og:type" content="article">', '<meta property
 idx = idx.replace('<style>', '<style>html[lang="en"] [data-l="nl"],html[lang="nl"] [data-l="en"]{display:none!important}\n', 1)
 idx = idx.replace('<header><div class="wrap">\n  <a href="../index.html" aria-label="Fitted CV home">', '<header><div class="wrap">\n  <a href="../index.html" aria-label="Fitted CV home">', 1)
 idx = idx.replace('</div></header>', '  <div class="lang" role="group" aria-label="Language / Taal"><button type="button" data-set="nl" aria-pressed="true">NL</button><button type="button" data-set="en" aria-pressed="false">EN</button></div>\n</div></header>', 1)
-idx = idx.replace('</body>', """<script>(function(){const r=document.documentElement;function set(l){r.lang=l;document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.set===l)));try{localStorage.setItem('fitted-lang',l)}catch(e){}}
+idx = idx.replace('</body>', """<script>(function(){const d=new Date(),t=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+document.querySelectorAll('template[data-date]').forEach(x=>{if(x.dataset.date<=t)x.replaceWith(x.content)})})();
+(function(){const r=document.documentElement;function set(l){r.lang=l;document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.set===l)));try{localStorage.setItem('fitted-lang',l)}catch(e){}}
 let s='nl';try{s=localStorage.getItem('fitted-lang')||((navigator.language||'').toLowerCase().startsWith('nl')?'nl':'en')}catch(e){}
 set(s);document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>set(b.dataset.set)));})();</script>
 </body>""", 1)
@@ -154,11 +161,11 @@ idx = idx.replace(fn, both, 1)
 today = datetime.date.today().isoformat()
 urls = [('/', today), ('/guide.html', today), ('/changelog.html', today), ('/blog/index.html', today),
         ('/privacy.html', None), ('/terms.html', None), ('/refund.html', None)]
-urls += [(f"/blog/{m['slug']}.html", m.get('updated', m['date'])) for m in posts]
+urls += [(f"/blog/{m['slug']}.html", m.get('updated', m['date'])) for m in live]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, d in urls:
     sm.append(f'  <url><loc>{SITE}{u}</loc>' + (f'<lastmod>{d}</lastmod>' if d else '') + '</url>')
 sm.append('</urlset>')
 (ROOT / 'sitemap.xml').write_text('\n'.join(sm) + '\n', encoding='utf-8')
 (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nDisallow: /blog/_posts/\n\nSitemap: {SITE}/sitemap.xml\n', encoding='utf-8')
-print('built', len(posts), 'posts')
+print('built', len(posts), 'posts,', len(live), 'live')
