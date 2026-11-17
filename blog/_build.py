@@ -92,7 +92,8 @@ def page(lang, title, desc, url, body, extra_head='', alt=None):
 </html>
 """
 
-TODAY = datetime.date.today().isoformat()
+import os
+TODAY = os.environ.get('FITTED_BLOG_DATE') or datetime.date.today().isoformat()  # set to build a future week's upload
 # Scheduled posts: a post with a date in the future is skipped until a build on or after that date.
 posts = sorted((m for m in (parse(p) for p in (BLOG / '_posts').glob('*.md')) if m['date'] <= TODAY),
                key=lambda m: (m['date'], m['slug']), reverse=True)
