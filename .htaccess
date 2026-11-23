@@ -8,7 +8,8 @@ RewriteCond %{SERVER_PORT} !=443
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://getfitted.nl/$1 [R=301,L]
 
-RewriteRule ^download/windows/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted.exe [R=302,L]
+# Windows: the Microsoft Store has the newest version and installs without a SmartScreen warning
+RewriteRule ^download/windows/?$ https://apps.microsoft.com/detail/9N3J1XHVJQ75 [R=302,L]
 RewriteRule ^download/mac-apple-silicon/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-mac-apple-silicon.dmg [R=302,L]
 RewriteRule ^download/mac-intel/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-mac-intel.dmg [R=302,L]
 RewriteRule ^download/android/?$ https://github.com/Weebs1234/Fitted/releases/latest/download/Fitted-android.apk [R=302,L]
